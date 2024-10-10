@@ -1,0 +1,395 @@
+plugins:
+  - uses:
+      - plugin: https://ubiquibot-command-start-stop-development.ubiquity.workers.dev
+        with:
+          reviewDelayTolerance: "3 Days"
+          taskStaleTimeoutDuration: "30 Days"
+          startRequiresWallet: true
+          maxConcurrentTasks:
+            member: 2
+            contributor: 2
+          emptyWalletText: "Please set your wallet address with the /wallet command first and try again."
+          rolesWithReviewAuthority:
+            - "COLLABORATOR"
+            - "OWNER"
+            - "MEMBER"
+            - "ADMIN"
+  - uses:
+      - plugin: https://ubiquity-os-comment-vector-embeddings-development.ubiquity.workers.dev
+        with:
+          matchThreshold: 0.95
+          warningThreshold: 0.75
+          jobMatchingThreshold: 0.75
+  - uses:
+      - plugin: https://ubiquibot-command-wallet-development.ubiquity.workers.dev
+        with:
+          registerWalletWithVerification: false
+  - uses:
+      - plugin: https://command-query-user-development.ubiquity.workers.dev
+        with:
+          allowPublicQuery: true
+  - uses:
+      - plugin: https://ubiquibot-assistive-pricing-development.ubiquity.workers.dev
+        with:
+          labels:
+            time:
+              - "Time: <15 Minutes"
+              - "Time: <1 Hour"
+              - "Time: <2 Hours"
+              - "Time: <4 Hours"
+              - "Time: <1 Day"
+              - "Time: <1 Week"
+              - "Time: <1 Month"
+            priority:
+              - "Priority: 1 (Normal)"
+              - "Priority: 2 (Medium)"
+              - "Priority: 3 (High)"
+              - "Priority: 4 (Urgent)"
+              - "Priority: 5 (Emergency)"
+          basePriceMultiplier: 2
+          publicAccessControl:
+            setLabel: true
+            fundExternalClosedIssue: false
+  - skipBotEvents: false
+    uses:
+      - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
+        with:
+          logLevel: "debug"
+          evmNetworkId: 100
+          evmPrivateEncrypted: "giLxu7IVSTpEFO89DaeCgnkKemYf2aFlK9EUQkbt71YmFOcQdIkCT8JDpX5zV5Sg1TqBeziZ486U0E3a6nD3emg0x9oeG3ILRUTlOE4I3RBZ0yTadsnV4RvewJMCMZJaYDuom-rHzog8p9InBwaHBszFeWItttSwS7o" # https://github.com/ubiquibot/conversation-rewards/pull/111#issuecomment-2348639931
+          erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
+          incentives:
+            requirePriceLabel: true
+            contentEvaluator:
+              enabled: true
+              openAi:
+                model: "gpt-4o-2024-08-06"
+                endpoint: ""
+              multipliers:
+                - role:
+                    - "ISSUE_SPECIFICATION"
+                  relevance: 1
+            userExtractor:
+              enabled: true
+              redeemTask: true
+            dataPurge:
+              enabled: true
+            formattingEvaluator:
+              enabled: true
+              multipliers:
+                - role:
+                    - ISSUE_SPECIFICATION
+                  multiplier: 3
+                  rewards:
+                    wordValue: 0.1
+                    html:
+                      br:
+                        score: 0
+                        countWords: true
+                      code:
+                        score: 5
+                        countWords: false
+                      p:
+                        score: 0
+                        countWords: true
+                      em:
+                        score: 0
+                        countWords: true
+                      img:
+                        score: 5
+                        countWords: true
+                      strong:
+                        score: 0
+                        countWords: false
+                      blockquote:
+                        score: 0
+                        countWords: false
+                      h1:
+                        score: 1
+                        countWords: true
+                      h2:
+                        score: 1
+                        countWords: true
+                      h3:
+                        score: 1
+                        countWords: true
+                      h4:
+                        score: 1
+                        countWords: true
+                      h5:
+                        score: 1
+                        countWords: true
+                      h6:
+                        score: 1
+                        countWords: true
+                      a:
+                        score: 5
+                        countWords: true
+                      li:
+                        score: 0.5
+                        countWords: true
+                      ul:
+                        score: 1
+                        countWords: true
+                      td:
+                        score: 0
+                        countWords: true
+                      hr:
+                        score: 0
+                        countWords: true
+                      pre:
+                        score: 0
+                        countWords: false
+                      ol:
+                        score: 1
+                        countWords: true
+                - role:
+                    - ISSUE_AUTHOR
+                    - ISSUE_COLLABORATOR
+                    - PULL_COLLABORATOR
+                  multiplier: 1
+                  rewards:
+                    wordValue: 0.1
+                    html:
+                      br:
+                        score: 0
+                        countWords: true
+                      code:
+                        score: 5
+                        countWords: false
+                      p:
+                        score: 0
+                        countWords: true
+                      em:
+                        score: 0
+                        countWords: true
+                      img:
+                        score: 5
+                        countWords: true
+                      strong:
+                        score: 0
+                        countWords: false
+                      blockquote:
+                        score: 0
+                        countWords: false
+                      h1:
+                        score: 1
+                        countWords: true
+                      h2:
+                        score: 1
+                        countWords: true
+                      h3:
+                        score: 1
+                        countWords: true
+                      h4:
+                        score: 1
+                        countWords: true
+                      h5:
+                        score: 1
+                        countWords: true
+                      h6:
+                        score: 1
+                        countWords: true
+                      a:
+                        score: 5
+                        countWords: true
+                      li:
+                        score: 0.5
+                        countWords: true
+                      ul:
+                        score: 1
+                        countWords: true
+                      td:
+                        score: 0
+                        countWords: true
+                      hr:
+                        score: 0
+                        countWords: true
+                      pre:
+                        score: 0
+                        countWords: false
+                      ol:
+                        score: 1
+                        countWords: true
+                - role:
+                    - ISSUE_CONTRIBUTOR
+                    - PULL_CONTRIBUTOR
+                  multiplier: 0.25
+                  rewards:
+                    wordValue: 0.1
+                    html:
+                      br:
+                        score: 0
+                        countWords: true
+                      code:
+                        score: 5
+                        countWords: false
+                      p:
+                        score: 0
+                        countWords: true
+                      em:
+                        score: 0
+                        countWords: true
+                      img:
+                        score: 5
+                        countWords: true
+                      strong:
+                        score: 0
+                        countWords: false
+                      blockquote:
+                        score: 0
+                        countWords: false
+                      h1:
+                        score: 1
+                        countWords: true
+                      h2:
+                        score: 1
+                        countWords: true
+                      h3:
+                        score: 1
+                        countWords: true
+                      h4:
+                        score: 1
+                        countWords: true
+                      h5:
+                        score: 1
+                        countWords: true
+                      h6:
+                        score: 1
+                        countWords: true
+                      a:
+                        score: 5
+                        countWords: true
+                      li:
+                        score: 0.5
+                        countWords: true
+                      ul:
+                        score: 1
+                        countWords: true
+                      td:
+                        score: 0
+                        countWords: true
+                      hr:
+                        score: 0
+                        countWords: true
+                      pre:
+                        score: 0
+                        countWords: false
+                      ol:
+                        score: 1
+                        countWords: true
+                - role:
+                    - PULL_SPECIFICATION
+                    - PULL_AUTHOR
+                    - ISSUE_ASSIGNEE
+                    - PULL_ASSIGNEE
+                  multiplier: 0
+                  rewards:
+                    wordValue: 0
+                    html:
+                      br:
+                        score: 0
+                        countWords: true
+                      code:
+                        score: 5
+                        countWords: false
+                      p:
+                        score: 0
+                        countWords: true
+                      em:
+                        score: 0
+                        countWords: true
+                      img:
+                        score: 5
+                        countWords: true
+                      strong:
+                        score: 0
+                        countWords: false
+                      blockquote:
+                        score: 0
+                        countWords: false
+                      h1:
+                        score: 1
+                        countWords: true
+                      h2:
+                        score: 1
+                        countWords: true
+                      h3:
+                        score: 1
+                        countWords: true
+                      h4:
+                        score: 1
+                        countWords: true
+                      h5:
+                        score: 1
+                        countWords: true
+                      h6:
+                        score: 1
+                        countWords: true
+                      a:
+                        score: 5
+                        countWords: true
+                      li:
+                        score: 0.5
+                        countWords: true
+                      ul:
+                        score: 1
+                        countWords: true
+                      td:
+                        score: 0
+                        countWords: true
+                      hr:
+                        score: 0
+                        countWords: true
+                      pre:
+                        score: 0
+                        countWords: false
+                      ol:
+                        score: 1
+                        countWords: true
+              wordCountExponent: 0.85
+            permitGeneration:
+              enabled: true
+            githubComment:
+              post: true
+              debug: false
+          dataCollection:
+            maxAttempts: 10
+            delayMs: 1000
+  - uses:
+      - plugin: ubiquibot/daemon-disqualifier@development
+        with:
+          warning: "3.5 days"
+          watch:
+            optOut:
+              - ubiquibot
+              - launch-party
+              - staging
+              - production
+          disqualification: "7 days"
+  - uses:
+      - plugin: ubiquibot/daemon-merging@development
+        with:
+          approvalsRequired:
+            collaborator: 1
+            contributor: 2
+          mergeTimeout:
+            collaborator: "3.5 days"
+            contributor: "7 days"
+          repos:
+            monitor: []
+            ignore:
+              - ubiquibot
+              - launch-party
+              - staging
+              - production
+          allowedReviewerRoles:
+            - "COLLABORATOR"
+            - "MEMBER"
+            - "OWNER"
+  - uses:
+      - plugin: ubiquibot/text-vector-embeddings@development
+        with:
+          matchThreshold: 0.95
+          warningThreshold: 0.75
+          jobMatchingThreshold: 0.75
