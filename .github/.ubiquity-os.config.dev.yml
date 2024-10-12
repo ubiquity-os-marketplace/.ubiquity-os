@@ -368,7 +368,7 @@ plugins:
               - production
           disqualification: "7 days"
   - uses:
-      - plugin: ubiquibot/daemon-merging@development
+      - plugin: ubiquity-os-marketplace/daemon-merging@development
         with:
           approvalsRequired:
             collaborator: 1
