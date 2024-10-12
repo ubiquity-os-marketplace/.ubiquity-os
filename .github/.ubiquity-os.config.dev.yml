@@ -357,7 +357,7 @@ plugins:
             maxAttempts: 10
             delayMs: 1000
   - uses:
-      - plugin: ubiquibot/daemon-disqualifier@development
+      - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
           warning: "3.5 days"
           watch:
@@ -394,7 +394,7 @@ plugins:
           warningThreshold: 0.75
           jobMatchingThreshold: 0.75
   - uses:
-      - plugin: ubiquity-os-marketplace/ubiquity-os-telegram@development
+      - plugin: ubiquity-os-marketplace/ubiquity-os-kernel-telegram@development
         with:
           botId: 5112548588
   - uses:
