@@ -388,7 +388,7 @@ plugins:
             - "MEMBER"
             - "OWNER"
   - uses:
-      - plugin: ubiquibot/text-vector-embeddings@development
+      - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
           matchThreshold: 0.95
           warningThreshold: 0.75
