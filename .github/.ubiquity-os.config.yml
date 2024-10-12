@@ -357,7 +357,7 @@ plugins:
             maxAttempts: 10
             delayMs: 1000
   - uses:
-      - plugin: ubiquibot/daemon-disqualifier@development
+      - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
           warning: "3.5 days"
           watch:
@@ -368,7 +368,7 @@ plugins:
               - production
           disqualification: "7 days"
   - uses:
-      - plugin: ubiquibot/daemon-merging@development
+      - plugin: ubiquity-os-marketplace/daemon-merging@development
         with:
           approvalsRequired:
             collaborator: 1
@@ -388,7 +388,7 @@ plugins:
             - "MEMBER"
             - "OWNER"
   - uses:
-      - plugin: ubiquibot/text-vector-embeddings@development
+      - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
           matchThreshold: 0.95
           warningThreshold: 0.75
