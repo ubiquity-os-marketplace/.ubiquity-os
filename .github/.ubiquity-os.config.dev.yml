@@ -396,7 +396,7 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/ubiquity-os-telegram@development
         with:
-          botId: 5112548588 # telegram bot ID
+          botId: 5112548588
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
         with:
