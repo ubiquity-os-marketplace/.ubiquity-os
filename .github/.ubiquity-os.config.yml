@@ -398,9 +398,11 @@ plugins:
           matchThreshold: 0.95
           warningThreshold: 0.75
           jobMatchingThreshold: 0.75
-  
   - uses:
-      - plugin: ubiquity-os-marketplace/ubiquity-os-telegram@development
-    
+      - plugin: ubiquity-os-marketplace/ubiquity-os-kernel-telegram@development
+        with:
+          botId: 5112548588
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
+        with:
+          botId: 5112548588
