@@ -360,6 +360,11 @@ plugins:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
           warning: "3.5 days"
+          eventWhitelist:
+            - "review_requested"
+            - "ready_for_review"
+            - "commented"
+            - "committed"
           watch:
             optOut:
               - ubiquibot
