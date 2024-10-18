@@ -60,11 +60,7 @@ plugins:
           erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
           incentives:
             requirePriceLabel: true
-            contentEvaluator:
-              enabled: true
-              openAi:
-                model: "gpt-4o-2024-08-06"
-                endpoint: ""
+            contentEvaluator: {}
               multipliers:
                 - role:
                     - "ISSUE_SPECIFICATION"
