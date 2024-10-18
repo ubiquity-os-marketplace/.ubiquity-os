@@ -60,7 +60,7 @@ plugins:
           erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
           incentives:
             requirePriceLabel: true
-            contentEvaluator: {}
+            contentEvaluator:
               multipliers:
                 - role:
                     - "ISSUE_SPECIFICATION"
