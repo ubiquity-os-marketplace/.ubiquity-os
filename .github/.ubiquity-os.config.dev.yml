@@ -1,6 +1,6 @@
 plugins:
   - uses:
-    - plugin: https://command-ask-development.ubiquity.workers.dev
+    - plugin: https://command-ask.sshivaditya.workers.dev
       with:
         model: "openai/o1-mini"
         openAiBaseUrl: "https://openrouter.ai/api/v1"
