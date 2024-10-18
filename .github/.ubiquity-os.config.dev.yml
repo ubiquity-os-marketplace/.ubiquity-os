@@ -1,5 +1,10 @@
 plugins:
   - uses:
+    - plugin: https://command-ask-development.ubiquity.workers.dev
+      with:
+        model: "openai/o1-mini"
+        openAiBaseUrl: "https://openrouter.ai/api/v1"
+  - uses:
       - plugin: https://ubiquibot-command-start-stop-development.ubiquity.workers.dev
         with:
           reviewDelayTolerance: "3 Days"
@@ -402,8 +407,3 @@ plugins:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
         with:
           botId: 5112548588
-  - uses:
-    - plugin: https://command-ask-development.ubiquity.workers.dev
-      with:
-        model: "openai/o1-mini"
-        openAiBaseUrl: "https://openrouter.ai/api/v1"
