@@ -1,6 +1,6 @@
 plugins:
   - uses:
-    - plugin: https://command-ask.sshivaditya.workers.dev
+    - plugin: sshivaditya2019/command-ask:compute.yml@development
       with:
         model: "openai/o1-mini"
         openAiBaseUrl: "https://openrouter.ai/api/v1"
