@@ -57,7 +57,7 @@ plugins:
             fundExternalClosedIssue: false
   - skipBotEvents: false
     uses:
-      - plugin: ubiquity-os-marketplace/text-conversation-rewards@fix/output
+      - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
         with:
           logLevel: "debug"
           evmNetworkId: 100
