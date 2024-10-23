@@ -402,8 +402,8 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/ubiquity-os-kernel-telegram@development
         with:
-          botId: 5112548588
+          botId: 7543249164
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
         with:
-          botId: 5112548588
+          botId: 7543249164
