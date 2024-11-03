@@ -368,7 +368,7 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
-          warning: "3.5 days"
+          warning: "7 days"
           eventWhitelist:
             - 'pull_request.review_requested'
             - 'pull_request.ready_for_review'
@@ -381,7 +381,7 @@ plugins:
               - launch-party
               - staging
               - production
-          disqualification: "7 days"
+          disqualification: "14 days"
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-merging@development
         with:
