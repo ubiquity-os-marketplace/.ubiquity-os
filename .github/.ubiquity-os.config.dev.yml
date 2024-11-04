@@ -38,7 +38,7 @@ plugins:
         with:
           registerWalletWithVerification: false
   - uses:
-      - plugin: https://command-query-user-feat-sdk.ubiquity.workers.dev
+      - plugin: https://command-query-user-development.ubiquity.workers.dev
         with:
           allowPublicQuery: true
   - uses:
