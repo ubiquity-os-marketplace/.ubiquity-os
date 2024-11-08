@@ -13,7 +13,7 @@ plugins:
         model: "openai/o1-mini"
         openAiBaseUrl: "https://openrouter.ai/api/v1"
   - uses:
-      - plugin: https://ubiquibot-command-start-stop-development.ubiquity.workers.dev
+      - plugin: https://ubiquity-os-command-start-stop-development.ubiquity.workers.dev
         with:
           reviewDelayTolerance: "3 Days"
           taskStaleTimeoutDuration: "30 Days"
@@ -27,6 +27,7 @@ plugins:
             - "OWNER"
             - "MEMBER"
             - "ADMIN"
+          requiredLabelsToStart: ["Priority: 3 (High)", "Priority: 4 (Urgent)", "Priority: 5 (Emergency)"]
   - uses:
       - plugin: https://ubiquity-os-comment-vector-embeddings-development.ubiquity.workers.dev
         with:
