@@ -362,7 +362,7 @@ plugins:
             # permitGeneration:
             #   enabled: true
             githubComment:
-              post: false
+              post: true
               debug: false
           dataCollection:
             maxAttempts: 10
