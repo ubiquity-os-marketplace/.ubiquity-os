@@ -359,10 +359,10 @@ plugins:
                         score: 0
                         countWords: true
               wordCountExponent: 0.85
-            permitGeneration:
-              enabled: true
+            # permitGeneration:
+            #   enabled: true
             githubComment:
-              post: true
+              post: false
               debug: false
           dataCollection:
             maxAttempts: 10
