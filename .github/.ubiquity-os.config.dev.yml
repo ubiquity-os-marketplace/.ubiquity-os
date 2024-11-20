@@ -406,6 +406,6 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
-          matchThreshold: 0.95
-          warningThreshold: 0.75
+          matchThreshold: 0.90
+          warningThreshold: 0.70
           jobMatchingThreshold: 0.75
