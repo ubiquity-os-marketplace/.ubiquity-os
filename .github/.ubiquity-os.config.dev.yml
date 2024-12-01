@@ -341,7 +341,7 @@ plugins:
         with:
           registerWalletWithVerification: false
   - uses:
-      - plugin: https://command-query-user-development.ubiquity.workers.dev
+      - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
         with:
           allowPublicQuery: true
   - uses:
