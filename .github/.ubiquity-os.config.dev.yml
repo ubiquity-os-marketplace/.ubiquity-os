@@ -1,4 +1,8 @@
 plugins:
+  - uses:
+      - plugin: https://ubiquity-os-command-wallet-development.ubiquity.workers.dev
+        with:
+          registerWalletWithVerification: false
   - skipBotEvents: false
     uses:
       - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
@@ -336,10 +340,6 @@ plugins:
           matchThreshold: 0.95
           warningThreshold: 0.75
           jobMatchingThreshold: 0.75
-  - uses:
-      - plugin: https://ubiquity-os-command-wallet-development.ubiquity.workers.dev
-        with:
-          registerWalletWithVerification: false
   - uses:
       - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
         with:
