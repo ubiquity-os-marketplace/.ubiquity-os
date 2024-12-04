@@ -367,6 +367,8 @@ plugins:
               - name: "Priority: 5 (Emergency)"
                 collaboratorOnly: false
           basePriceMultiplier: 2
+          globalConfigUpdate:
+            excludeRepos: []
           publicAccessControl:
             setLabel: true
             fundExternalClosedIssue: false
