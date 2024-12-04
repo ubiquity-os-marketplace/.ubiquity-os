@@ -345,6 +345,8 @@ plugins:
         with:
           labels:
             time:
+              - name: "Time: <15 Minutes"
+                collaboratorOnly: false            
               - name: "Time: <1 Hour"
                 collaboratorOnly: false
               - name: "Time: <2 Hours"
