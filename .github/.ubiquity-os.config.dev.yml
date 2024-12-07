@@ -24,7 +24,7 @@ plugins:
               multipliers:
                 - role:
                     - ISSUE_SPECIFICATION
-                  multiplier: 3
+                  multiplier: 1
                   rewards:
                     wordValue: 0.1
                     html:
