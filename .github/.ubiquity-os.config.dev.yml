@@ -358,6 +358,8 @@ plugins:
               - name: "Time: <1 Week"
                 collaboratorOnly: false
             priority:
+              - name: "Priority: 0 (Regression)"
+                collaboratorOnly: false
               - name: "Priority: 1 (Normal)"
                 collaboratorOnly: false
               - name: "Priority: 2 (Medium)"
