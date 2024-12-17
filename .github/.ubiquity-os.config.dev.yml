@@ -331,12 +331,13 @@ plugins:
             - "ADMIN"
           requiredLabelsToStart:
             - name: "Priority: 1 (Normal)"
-              roles: ['collaborator', 'admin']
             - name: "Priority: 2 (Medium)"
-              roles: ['collaborator', 'admin']
             - name: "Priority: 3 (High)"
+              roles: ['collaborator', 'admin']
             - name: "Priority: 4 (Urgent)"
+              roles: ['collaborator', 'admin']
             - name: "Priority: 5 (Emergency)"
+              roles: ['collaborator', 'admin']
   - uses:
       - plugin: https://ubiquity-os-comment-vector-embeddings-development.ubiquity.workers.dev
         with:
