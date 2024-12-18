@@ -384,7 +384,8 @@ plugins:
           publicAccessControl:
             setLabel: true
             fundExternalClosedIssue: false
-  - uses:
+  - skipBotEvents: false
+    uses:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
           warning: "7 days"
