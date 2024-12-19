@@ -423,13 +423,6 @@ plugins:
             - "MEMBER"
             - "OWNER"
   - uses:
-      - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
-        with:
-          matchThreshold: 0.90
-          warningThreshold: 0.50
-          jobMatchingThreshold: 0.75
-          alwaysRecommend: 3
-  - uses:
       - plugin: https://ubiquity-os-command-wallet-development.ubiquity.workers.dev
         with:
           registerWalletWithVerification: false
