@@ -333,11 +333,11 @@ plugins:
             - name: "Priority: 1 (Normal)"
             - name: "Priority: 2 (Medium)"
             - name: "Priority: 3 (High)"
-              roles: ['collaborator', 'admin']
+              allowedRoles: ['collaborator']
             - name: "Priority: 4 (Urgent)"
-              roles: ['collaborator', 'admin']
+              allowedRoles: ['collaborator']
             - name: "Priority: 5 (Emergency)"
-              roles: ['collaborator', 'admin']
+              allowedRoles: ['collaborator']
   - uses:
       - plugin: https://ubiquity-os-comment-vector-embeddings-development.ubiquity.workers.dev
         with:
