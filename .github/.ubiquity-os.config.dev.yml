@@ -341,10 +341,10 @@ plugins:
             - name: "Priority: 5 (Emergency)"
               allowedRoles: ['collaborator']
   - uses:
-      - plugin: https://ubiquity-os-comment-vector-embeddings-development.ubiquity.workers.dev
+      - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
-          matchThreshold: 0.95
-          warningThreshold: 0.75
+          matchThreshold: 0.90
+          warningThreshold: 0.5
           jobMatchingThreshold: 0.75
   - uses:
       - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
