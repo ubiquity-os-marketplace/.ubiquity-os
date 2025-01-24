@@ -304,6 +304,14 @@ plugins:
       - plugin: ubiquity-os-marketplace/ubiquity-os-kernel-telegram@development
         with:
           botId: 7543249164
+          shouldUseGithubStorage: false
+          storageOwner: "ubiquity-os-marketplace"
+          fuzzySearchThreshold: 0.2
+          aiConfig:
+            kind: "OpenAi"
+            model: "o1-mini"
+            baseUrl: "https://api.openai.com/v1"
+            similarityThreshold: 0.9
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
         with:
@@ -313,6 +321,8 @@ plugins:
       with:
         model: "openai/o1-mini"
         openAiBaseUrl: "https://openrouter.ai/api/v1"
+        similarityThreshold: 0.9
+        maxDepth: 3
   - skipBotEvents: false
     uses:
       - plugin: https://ubiquity-os-command-start-stop-development.ubiquity.workers.dev
@@ -340,12 +350,14 @@ plugins:
               allowedRoles: ['collaborator']
             - name: "Priority: 5 (Emergency)"
               allowedRoles: ['collaborator']
+          assignedIssueScope: "org"
   - uses:
       - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
           matchThreshold: 0.90
           warningThreshold: 0.5
           jobMatchingThreshold: 0.75
+          alwaysRecommend: 0
   - uses:
       - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
         with:
@@ -386,6 +398,10 @@ plugins:
           publicAccessControl:
             setLabel: true
             fundExternalClosedIssue: false
+            protectLabels:
+              - "priority"
+              - "price"
+              - "time"
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
@@ -403,6 +419,8 @@ plugins:
               - staging
               - production
           disqualification: "14 days"
+          prioritySpeed: true
+          pullRequestRequired: true
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-merging@development
         with:
