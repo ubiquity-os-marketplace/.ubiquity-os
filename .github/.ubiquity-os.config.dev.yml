@@ -445,3 +445,5 @@ plugins:
       - plugin: https://ubiquity-os-command-wallet-development.ubiquity.workers.dev
         with:
           registerWalletWithVerification: false
+  - uses:
+      - plugin: ubiquity-os-marketplace/daemon-merging
