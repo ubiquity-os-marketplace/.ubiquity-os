@@ -310,7 +310,7 @@ plugins:
           aiConfig:
             kind: "OpenAi"
             model: "anthropic/claude-3.5-sonnet"
-            baseUrl: "https://api.openai.com/v1"
+            baseUrl: "https://openrouter.ai/api/v1"
             similarityThreshold: 0.9
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
