@@ -309,8 +309,8 @@ plugins:
           fuzzySearchThreshold: 0.2
           aiConfig:
             kind: "OpenAi"
-            model: "o1-mini"
-            baseUrl: "https://api.openai.com/v1"
+            model: "anthropic/claude-3.5-sonnet"
+            baseUrl: "https://openrouter.ai/api/v1"
             similarityThreshold: 0.9
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
@@ -319,7 +319,7 @@ plugins:
   - uses:
     - plugin: ubiquity-os-marketplace/command-ask@development
       with:
-        model: "openai/o1-mini"
+        model: "anthropic/claude-3.5-sonnet"
         openAiBaseUrl: "https://openrouter.ai/api/v1"
         similarityThreshold: 0.9
         maxDepth: 3
@@ -447,3 +447,9 @@ plugins:
           registerWalletWithVerification: false
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-pull-review
+        with:
+          openRouterAiModel: "anthropic/claude-3.5-sonnet"
+          openRouterBaseUrl: "https://openrouter.ai/api/v1"
+          tokenLimit:
+            context: 200000
+            completion: 4096
