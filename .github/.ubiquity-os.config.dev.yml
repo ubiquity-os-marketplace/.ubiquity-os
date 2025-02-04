@@ -19,6 +19,9 @@ plugins:
               redeemTask: true
             dataPurge:
               enabled: true
+            reviewIncentivizer:
+              baseRate: 100
+              conclusiveReviewCredit: 25
             formattingEvaluator:
               enabled: true
               multipliers:
