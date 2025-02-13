@@ -359,7 +359,7 @@ plugins:
         with:
           matchThreshold: 0.90
           warningThreshold: 0.5
-          jobMatchingThreshold: 0.75
+          jobMatchingThreshold: 0.70
           alwaysRecommend: 0
   - uses:
       - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
