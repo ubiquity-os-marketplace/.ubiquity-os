@@ -27,7 +27,7 @@ plugins:
               multipliers:
                 - role:
                     - ISSUE_SPECIFICATION
-                  multiplier: 0
+                  multiplier: 1
                   rewards:
                     wordValue: 0.1
                     html:
@@ -74,7 +74,7 @@ plugins:
                         score: 5
                         countWords: true
                       li:
-                        score: 0.5
+                        score: 0.1
                         countWords: true
                       ul:
                         score: 0
@@ -142,7 +142,7 @@ plugins:
                         score: 5
                         countWords: true
                       li:
-                        score: 0.5
+                        score: 0.1
                         countWords: true
                       ul:
                         score: 0
@@ -209,7 +209,7 @@ plugins:
                         score: 5
                         countWords: true
                       li:
-                        score: 0.5
+                        score: 0.1
                         countWords: true
                       ul:
                         score: 0
@@ -278,7 +278,7 @@ plugins:
                         score: 5
                         countWords: true
                       li:
-                        score: 0.5
+                        score: 0.1
                         countWords: true
                       ul:
                         score: 0
