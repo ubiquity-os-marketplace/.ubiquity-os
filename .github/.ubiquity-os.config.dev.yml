@@ -459,3 +459,5 @@ plugins:
           tokenLimit:
             context: 200000
             completion: 4096
+  - uses:
+      - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
