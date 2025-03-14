@@ -462,4 +462,4 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
   - uses:
-      - plugin: ubiquity-os-marketplace/command-config@development
+      - plugin: https://command-config-development.ubiquity.workers.dev
