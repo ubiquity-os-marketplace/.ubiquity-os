@@ -461,3 +461,5 @@ plugins:
             completion: 4096
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
+  - uses:
+      - plugin: https://command-config-development.ubiquity.workers.dev
