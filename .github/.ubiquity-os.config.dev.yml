@@ -409,7 +409,7 @@ plugins:
           basePriceMultiplier: 2
           globalConfigUpdate:
             excludeRepos: []
-          publicAccessControl: false
+          shouldFundContributorClosedIssue: false
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
