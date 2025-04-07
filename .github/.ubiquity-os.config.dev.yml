@@ -1,7 +1,7 @@
 plugins:
   - skipBotEvents: false
     uses:
-      - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
+      - plugin: ubiquity-os-marketplace/text-conversation-rewards@fix/extensions
         with:
           logLevel: "debug"
           evmNetworkId: 100
