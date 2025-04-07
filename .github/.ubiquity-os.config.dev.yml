@@ -1,7 +1,7 @@
 plugins:
   - skipBotEvents: false
     uses:
-      - plugin: ubiquity-os-marketplace/text-conversation-rewards@fix/extensions
+      - plugin: ubiquity-os-marketplace/text-conversation-rewards@main
         with:
           logLevel: "debug"
           evmNetworkId: 100
@@ -409,7 +409,7 @@ plugins:
               - "price"
               - "time"
   - uses:
-      - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
+      - plugin: ubiquity-os-marketplace/daemon-disqualifier@fix/extensions
         with:
           warning: "7 days"
           eventWhitelist:
