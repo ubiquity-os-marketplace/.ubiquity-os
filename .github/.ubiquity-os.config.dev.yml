@@ -299,7 +299,8 @@ plugins:
                         score: 0
                         countWords: true
               wordCountExponent: 0.85
-            permitGeneration: {}
+            payment: 
+              automaticTransferMode: false
             githubComment:
               post: true
               debug: false
