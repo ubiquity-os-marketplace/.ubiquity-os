@@ -3,9 +3,9 @@ plugins:
     uses:
       - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
         with:
-          logLevel: "debug"
+          logLevel: debug
           evmNetworkId: 100
-          evmPrivateEncrypted: "giLxu7IVSTpEFO89DaeCgnkKemYf2aFlK9EUQkbt71YmFOcQdIkCT8JDpX5zV5Sg1TqBeziZ486U0E3a6nD3emg0x9oeG3ILRUTlOE4I3RBZ0yTadsnV4RvewJMCMZJaYDuom-rHzog8p9InBwaHBszFeWItttSwS7o" # https://github.com/ubiquibot/conversation-rewards/pull/111#issuecomment-2348639931
+          evmPrivateEncrypted: giLxu7IVSTpEFO89DaeCgnkKemYf2aFlK9EUQkbt71YmFOcQdIkCT8JDpX5zV5Sg1TqBeziZ486U0E3a6nD3emg0x9oeG3ILRUTlOE4I3RBZ0yTadsnV4RvewJMCMZJaYDuom-rHzog8p9InBwaHBszFeWItttSwS7o
           erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
           incentives:
             requirePriceLabel: true
@@ -15,7 +15,7 @@ plugins:
                 endpoint: https://openrouter.ai/api/v1
               multipliers:
                 - role:
-                    - "ISSUE_SPECIFICATION"
+                    - ISSUE_SPECIFICATION
                   relevance: 1
             userExtractor:
               enabled: true
@@ -312,58 +312,66 @@ plugins:
         with:
           botId: 7543249164
           shouldUseGithubStorage: false
-          storageOwner: "ubiquity-os-marketplace"
+          storageOwner: ubiquity-os-marketplace
           fuzzySearchThreshold: 0.2
           aiConfig:
-            kind: "OpenAi"
-            model: "anthropic/claude-3.5-sonnet"
-            baseUrl: "https://openrouter.ai/api/v1"
+            kind: OpenAi
+            model: anthropic/claude-3.5-sonnet
+            baseUrl: https://openrouter.ai/api/v1
             similarityThreshold: 0.9
   - uses:
       - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
         with:
           botId: 7543249164
   - uses:
-    - plugin: ubiquity-os-marketplace/command-ask@development
-      with:
-        model: "anthropic/claude-3.5-sonnet"
-        openAiBaseUrl: "https://openrouter.ai/api/v1"
-        similarityThreshold: 0.9
-        maxDepth: 3
+      - plugin: ubiquity-os-marketplace/command-ask@development
+        with:
+          model: anthropic/claude-3.5-sonnet
+          openAiBaseUrl: https://openrouter.ai/api/v1
+          similarityThreshold: 0.9
+          maxDepth: 3
   - skipBotEvents: false
     uses:
       - plugin: https://ubiquity-os-command-start-stop-development.ubiquity.workers.dev
         with:
-          reviewDelayTolerance: "3 Days"
-          taskStaleTimeoutDuration: "30 Days"
+          reviewDelayTolerance: 3 Days
+          taskStaleTimeoutDuration: 30 Days
           startRequiresWallet: true
           maxConcurrentTasks:
             collaborator: 2
             contributor: 2
-          emptyWalletText: "Please set your wallet address with the /wallet command first and try again."
+          emptyWalletText: Please set your wallet address with the /wallet command first
+            and try again.
           rolesWithReviewAuthority:
-            - "COLLABORATOR"
-            - "OWNER"
-            - "MEMBER"
-            - "ADMIN"
+            - COLLABORATOR
+            - OWNER
+            - MEMBER
+            - ADMIN
           requiredLabelsToStart:
             - name: "Priority: 1 (Normal)"
-              allowedRoles: ['collaborator', 'contributor']            
+              allowedRoles:
+                - collaborator
+                - contributor
             - name: "Priority: 2 (Medium)"
-              allowedRoles: ['collaborator', 'contributor']
+              allowedRoles:
+                - collaborator
+                - contributor
             - name: "Priority: 3 (High)"
-              allowedRoles: ['collaborator']
+              allowedRoles:
+                - collaborator
             - name: "Priority: 4 (Urgent)"
-              allowedRoles: ['collaborator']
+              allowedRoles:
+                - collaborator
             - name: "Priority: 5 (Emergency)"
-              allowedRoles: ['collaborator']
-          assignedIssueScope: "org"
+              allowedRoles:
+                - collaborator
+          assignedIssueScope: org
   - uses:
       - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
           matchThreshold: 0.95
           warningThreshold: 0.75
-          jobMatchingThreshold: 0.70
+          jobMatchingThreshold: 0.7
           alwaysRecommend: 0
   - uses:
       - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
@@ -375,7 +383,7 @@ plugins:
           labels:
             time:
               - name: "Time: <15 Minutes"
-                collaboratorOnly: false            
+                collaboratorOnly: false
               - name: "Time: <1 Hour"
                 collaboratorOnly: false
               - name: "Time: <2 Hours"
@@ -402,30 +410,24 @@ plugins:
           basePriceMultiplier: 2
           globalConfigUpdate:
             excludeRepos: []
-          publicAccessControl:
-            setLabel: true
-            fundExternalClosedIssue: false
-            protectLabels:
-              - "priority"
-              - "price"
-              - "time"
+          shouldFundContributorClosedIssue: false
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@fix/extensions
         with:
-          warning: "7 days"
+          warning: 7 days
           eventWhitelist:
-            - 'pull_request.review_requested'
-            - 'pull_request.ready_for_review'
-            - 'pull_request_review_comment.created'
-            - 'issue_comment.created'
-            - 'push'
+            - pull_request.review_requested
+            - pull_request.ready_for_review
+            - pull_request_review_comment.created
+            - issue_comment.created
+            - push
           watch:
             optOut:
               - ubiquibot
               - launch-party
               - staging
               - production
-          disqualification: "14 days"
+          disqualification: 14 days
           prioritySpeed: true
           pullRequestRequired: true
   - uses:
@@ -435,8 +437,8 @@ plugins:
             collaborator: 1
             contributor: 2
           mergeTimeout:
-            collaborator: "3.5 days"
-            contributor: "7 days"
+            collaborator: 3.5 days
+            contributor: 7 days
           repos:
             monitor: []
             ignore:
@@ -445,9 +447,9 @@ plugins:
               - staging
               - production
           allowedReviewerRoles:
-            - "COLLABORATOR"
-            - "MEMBER"
-            - "OWNER"
+            - COLLABORATOR
+            - MEMBER
+            - OWNER
   - uses:
       - plugin: https://ubiquity-os-command-wallet-development.ubiquity.workers.dev
         with:
@@ -455,8 +457,8 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-pull-review
         with:
-          openRouterAiModel: "anthropic/claude-3.5-sonnet"
-          openRouterBaseUrl: "https://openrouter.ai/api/v1"
+          openRouterAiModel: anthropic/claude-3.5-sonnet
+          openRouterBaseUrl: https://openrouter.ai/api/v1
           tokenLimit:
             context: 200000
             completion: 4096
