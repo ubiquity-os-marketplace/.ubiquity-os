@@ -10,9 +10,9 @@ plugins:
           incentives:
             requirePriceLabel: true
             contentEvaluator:
-              enabled: true
               openAi:
                 endpoint: https://openrouter.ai/api/v1
+                model: google/gemini-2.5-pro-exp-03-25:free
               multipliers:
                 - role:
                     - ISSUE_SPECIFICATION
