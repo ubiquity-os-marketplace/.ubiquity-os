@@ -412,7 +412,7 @@ plugins:
             excludeRepos: []
           shouldFundContributorClosedIssue: false
   - uses:
-      - plugin: ubiquity-os-marketplace/daemon-disqualifier@fix/extensions
+      - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
           warning: 7 days
           eventWhitelist:
