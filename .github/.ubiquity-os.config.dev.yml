@@ -366,6 +366,9 @@ plugins:
               allowedRoles:
                 - collaborator
           assignedIssueScope: org
+          taskAccessControl:
+            usdPriceMax:
+              contributor: -1
   - uses:
       - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
