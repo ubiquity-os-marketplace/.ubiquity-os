@@ -369,6 +369,7 @@ plugins:
           taskAccessControl:
             usdPriceMax:
               contributor: -1
+              collaborator: Infinity
   - uses:
       - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
