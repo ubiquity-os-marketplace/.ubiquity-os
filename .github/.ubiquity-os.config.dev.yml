@@ -382,7 +382,7 @@ plugins:
         with:
           allowPublicQuery: true
   - uses:
-      - plugin: https://ubiquity-os-marketplace-daemon-pricing-ck9z5r80h.vercel.app
+      - plugin: https://ubiquity-os-marketplace-daemon-pricing-nf54oten2.vercel.app
         with:
           labels:
             time:
