@@ -175,7 +175,7 @@ plugins:
         with:
           allowPublicQuery: true
   - uses:
-      - plugin: https://ubiquity-os-marketplace-daemon-pricing-nf54oten2.vercel.app
+      - plugin: https://ubiquity-os-daemon-pricing-development.azurewebsites.net
         with:
           labels:
             time:
