@@ -41,7 +41,7 @@ tcrHtmlConfig: &tcrHtmlConfig
 plugins:
   - skipBotEvents: false
     uses:
-      - plugin: ubiquity-os-marketplace/text-conversation-rewards@fix/prompt
+      - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
         with:
           permits:
             evmNetworkId: 100
