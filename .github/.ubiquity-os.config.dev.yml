@@ -126,7 +126,7 @@ plugins:
           maxDepth: 3
   - skipBotEvents: false
     uses:
-      - plugin: https://ubiquity-os-command-start-stop-development.azurewebsites.net
+      - plugin: https://command-start-stop-develop.deno.dev
         with:
           reviewDelayTolerance: 3 Days
           taskStaleTimeoutDuration: 30 Days
