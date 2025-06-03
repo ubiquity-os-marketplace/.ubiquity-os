@@ -176,7 +176,7 @@ plugins:
         with:
           allowPublicQuery: true
   - uses:
-      - plugin: https://ubiquity-os-daemon-pricing-development.azurewebsites.net
+      - plugin: https://daemon-pricing-development.deno.dev
         with:
           labels:
             time:
