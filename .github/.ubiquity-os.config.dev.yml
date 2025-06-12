@@ -172,7 +172,7 @@ plugins:
           jobMatchingThreshold: 0.7
           alwaysRecommend: 0
   - uses:
-      - plugin: https://ubiquity-os-command-query-user-development.ubiquity.workers.dev
+      - plugin: https://command-query-development.deno.dev
         with:
           allowPublicQuery: true
   - uses:
