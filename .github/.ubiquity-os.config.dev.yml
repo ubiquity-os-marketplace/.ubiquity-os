@@ -114,7 +114,7 @@ plugins:
             baseUrl: https://openrouter.ai/api/v1
             similarityThreshold: 0.9
   - uses:
-      - plugin: https://ubiquity-os-telegram-bridge-development.ubiquity.workers.dev
+      - plugin: https://ubiquity-os-kernel-telegra.deno.dev
         with:
           botId: 7543249164
   - uses:
@@ -249,7 +249,7 @@ plugins:
             - MEMBER
             - OWNER
   - uses:
-      - plugin: https://ubiquity-os-command-wallet-development.ubiquity.workers.dev
+      - plugin: https://command-wallet-development.deno.dev
         with:
           registerWalletWithVerification: false
   - uses:
@@ -263,4 +263,4 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
   - uses:
-      - plugin: https://command-config-development.ubiquity.workers.dev
+      - plugin: https://command-config-development.deno.dev
