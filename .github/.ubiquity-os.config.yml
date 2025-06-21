@@ -1,0 +1,29 @@
+plugins:
+  - uses:
+      - plugin: "https://ubiquity-os-command-start-stop-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "https://ubiquity-os-command-wallet-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "ubiquity-os-marketplace/command-ask@main"
+  - uses:
+      - plugin: "https://ubiquity-os-command-query-user-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "https://ubiquity-os-daemon-pricing-main.ubiquity.workers.dev"
+  - uses:
+      - plugin: "ubiquity-os-marketplace/text-conversation-rewards@main"
+        with:
+          incentives:
+            contentEvaluator: {}
+            userExtractor: {}
+            dataPurge: {}
+            formattingEvaluator: {}
+            permitGeneration: {}
+            githubComment: {}
+          evmPrivateEncrypted: "rub6mcEWe1w8OD1fUuxHgpeH9zwgJ643TBCq6JiT8C1z5KQd864aHihdC3CRF5crF6yeZN41PSkTYSBej-p8-cBDCn_jPaPwNZDyDs3s7nVywCFiVKmSim9Xih_OvrCMqGM3vzyUxykmjP53poMUYxaHvYA8__NVJZMUQFnh"
+          evmNetworkId: 1
+  - uses:
+      - plugin: "ubiquity-os-marketplace/daemon-disqualifier@main"
+  - uses:
+      - plugin: "ubiquity-os-marketplace/daemon-merging@main"
+  - uses:
+      - plugin: "https://ubiquity-os-comment-vector-embeddings-main.ubiquity.workers.dev"
