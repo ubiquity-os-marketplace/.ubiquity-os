@@ -205,7 +205,7 @@ plugins:
                 collaboratorOnly: false
               - name: "Priority: 5 (Emergency)"
                 collaboratorOnly: false
-          basePriceMultiplier: 2
+          basePriceMultiplier: 2.0
           globalConfigUpdate:
             excludeRepos: []
           shouldFundContributorClosedIssue: false
