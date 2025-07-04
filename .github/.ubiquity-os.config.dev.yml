@@ -253,7 +253,7 @@ plugins:
         with:
           registerWalletWithVerification: false
   - uses:
-      - plugin: ubiquity-os-marketplace/daemon-pull-review
+      - plugin: ubiquity-os-marketplace/daemon-pull-review@development
         with:
           openRouterAiModel: anthropic/claude-3.5-sonnet
           openRouterBaseUrl: https://openrouter.ai/api/v1
