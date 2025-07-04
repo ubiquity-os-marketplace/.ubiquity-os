@@ -52,7 +52,7 @@ plugins:
             contentEvaluator:
               openAi:
                 endpoint: https://openrouter.ai/api/v1
-                model: deepseek/deepseek-chat-v3-0324
+                model: deepseek/deepseek-r1-0528:free
               multipliers:
                 - role:
                     - ISSUE_SPECIFICATION
@@ -102,25 +102,9 @@ plugins:
             maxAttempts: 10
             delayMs: 1000
   - uses:
-      - plugin: ubiquity-os-marketplace/ubiquity-os-kernel-telegram@development
-        with:
-          botId: 7543249164
-          shouldUseGithubStorage: false
-          storageOwner: ubiquity-os-marketplace
-          fuzzySearchThreshold: 0.2
-          aiConfig:
-            kind: OpenAi
-            model: anthropic/claude-3.5-sonnet
-            baseUrl: https://openrouter.ai/api/v1
-            similarityThreshold: 0.9
-  - uses:
-      - plugin: https://ubiquity-os-kernel-telegra.deno.dev
-        with:
-          botId: 7543249164
-  - uses:
       - plugin: ubiquity-os-marketplace/command-ask@development
         with:
-          model: anthropic/claude-3.5-sonnet
+          model: deepseek/deepseek-r1-0528:free
           openAiBaseUrl: https://openrouter.ai/api/v1
           similarityThreshold: 0.9
           maxDepth: 3
@@ -255,7 +239,7 @@ plugins:
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-pull-review@development
         with:
-          openRouterAiModel: anthropic/claude-3.5-sonnet
+          openRouterAiModel: deepseek/deepseek-r1-0528:free
           openRouterBaseUrl: https://openrouter.ai/api/v1
           tokenLimit:
             context: 200000
