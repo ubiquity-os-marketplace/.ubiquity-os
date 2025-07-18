@@ -52,7 +52,7 @@ plugins:
             contentEvaluator:
               openAi:
                 endpoint: https://openrouter.ai/api/v1
-                model: deepseek/deepseek-r1-0528:free
+                model: deepseek/deepseek-chat-v3-0324:free
               multipliers:
                 - role:
                     - ISSUE_SPECIFICATION
