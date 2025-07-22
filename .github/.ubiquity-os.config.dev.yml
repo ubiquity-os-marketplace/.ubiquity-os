@@ -57,6 +57,11 @@ plugins:
                 - role:
                     - ISSUE_SPECIFICATION
                   relevance: 1
+            externalContent:
+              llmImageModel:
+                model: meta-llama/llama-4-maverick:free
+              llmWebsiteModel:
+                model: deepseek/deepseek-chat-v3-0324:free
             userExtractor:
               redeemTask: true
             dataPurge:
