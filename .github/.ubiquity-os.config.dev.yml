@@ -253,3 +253,5 @@ plugins:
       - plugin: https://command-config-development.deno.dev
         with:
           model: deepseek/deepseek-chat-v3-0324:free
+  - uses:
+      - plugin: ubiquity-os-marketplace/daemon-spec-rewriter@development
