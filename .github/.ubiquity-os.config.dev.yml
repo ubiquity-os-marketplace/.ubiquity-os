@@ -251,3 +251,5 @@ plugins:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
   - uses:
       - plugin: https://command-config-development.deno.dev
+        with:
+          model: deepseek/deepseek-chat-v3-0324:free
