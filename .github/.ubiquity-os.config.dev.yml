@@ -52,16 +52,16 @@ plugins:
             contentEvaluator:
               openAi:
                 endpoint: https://openrouter.ai/api/v1
-                model: deepseek/deepseek-chat-v3-0324:free
+                model: google/gemini-2.5-flash
               multipliers:
                 - role:
                     - ISSUE_SPECIFICATION
                   relevance: 1
             externalContent:
               llmImageModel:
-                model: meta-llama/llama-3.2-11b-vision-instruct:free
+                model: openai/gpt-4o
               llmWebsiteModel:
-                model: deepseek/deepseek-chat-v3-0324:free
+                model: google/gemini-2.5-flash
             userExtractor:
               redeemTask: true
             dataPurge:
