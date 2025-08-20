@@ -89,14 +89,14 @@ plugins:
                     - PULL_AUTHOR
                     - PULL_CONTRIBUTOR
                     - PULL_ASSIGNEE
-                    - PULL_SPECIFICATION                    
+                    - PULL_SPECIFICATION
                   multiplier: 0
                   rewards:
                     wordValue: 0
                     html: *tcrHtmlConfig
             permitGeneration: {}
             simplificationIncentivizer: {}
-            payment: 
+            payment:
               automaticTransferMode: false
             githubComment:
               post: true
@@ -239,14 +239,6 @@ plugins:
       - plugin: https://command-wallet-development.deno.dev
         with:
           registerWalletWithVerification: false
-  - uses:
-      - plugin: ubiquity-os-marketplace/daemon-pull-review@development
-        with:
-          openRouterAiModel: deepseek/deepseek-r1-0528:free
-          openRouterBaseUrl: https://openrouter.ai/api/v1
-          tokenLimit:
-            context: 200000
-            completion: 4096
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
   - uses:
