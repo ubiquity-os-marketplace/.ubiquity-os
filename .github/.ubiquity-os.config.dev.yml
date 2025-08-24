@@ -65,7 +65,7 @@ plugins:
             userExtractor:
               redeemTask: true
             dataPurge:
-              enabled: true
+              skipCommentsWhileAssigned: "exact"
             reviewIncentivizer: {}
             formattingEvaluator:
               multipliers:
