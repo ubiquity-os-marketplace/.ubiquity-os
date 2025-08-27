@@ -14,6 +14,42 @@ oneFalse: &oneFalse
   score: 1
   countWords: false
 
+allRoles: &allRoles
+  - collaborator
+  - contributor
+collaboratorOnly: &collaboratorOnly
+  - collaborator
+teamMembersOnly: &teamMembersOnly
+  - COLLABORATOR
+  - OWNER
+  - MEMBER
+  - ADMIN
+timeLabels: &timeLabels
+  - name: "Time: <15 Minutes"
+    collaboratorOnly: false
+  - name: "Time: <1 Hour"
+    collaboratorOnly: false
+  - name: "Time: <2 Hours"
+    collaboratorOnly: false
+  - name: "Time: <4 Hours"
+    collaboratorOnly: false
+  - name: "Time: <1 Day"
+    collaboratorOnly: false
+  - name: "Time: <1 Week"
+    collaboratorOnly: false
+priorityLabels: &priorityLabels
+  - name: "Priority: 0 (Regression)"
+    collaboratorOnly: false
+  - name: "Priority: 1 (Normal)"
+    collaboratorOnly: false
+  - name: "Priority: 2 (Medium)"
+    collaboratorOnly: false
+  - name: "Priority: 3 (High)"
+    collaboratorOnly: false
+  - name: "Priority: 4 (Urgent)"
+    collaboratorOnly: false
+  - name: "Priority: 5 (Emergency)"
+    collaboratorOnly: false
 tcrHtmlConfig: &tcrHtmlConfig
   a: *oneTrue
   code: *oneFalse
@@ -39,6 +75,21 @@ tcrHtmlConfig: &tcrHtmlConfig
     countWords: true
 
 plugins:
+  - uses:
+      - plugin: ubiquity-os-marketplace/command-ask@development
+        with:
+          model: google/gemini-2.5-flash
+          openRouterBaseUrl: https://openrouter.ai/api/v1
+          similarityThreshold: 0.9
+          maxDepth: 3
+  - uses:
+      - plugin: https://command-config-development.deno.dev
+        with:
+          model: google/gemini-2.5-flash
+  - uses:
+      - plugin: https://command-query-development.deno.dev
+        with:
+          allowPublicQuery: true
   - skipBotEvents: false
     uses:
       - plugin: https://command-start-stop-develop.deno.dev
@@ -85,55 +136,60 @@ plugins:
       - plugin: https://command-wallet-development.deno.dev
         with:
           registerWalletWithVerification: false
-  - uses:
-      - plugin: ubiquity-os-marketplace/command-ask@development
+  - skipBotEvents: false
+    uses:
+      - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
-          model: google/gemini-2.5-flash
-          openRouterBaseUrl: https://openrouter.ai/api/v1
-          similarityThreshold: 0.9
-          maxDepth: 3
+          warning: 7 days
+          eventWhitelist:
+            - pull_request.review_requested
+            - pull_request.ready_for_review
+            - pull_request_review_comment.created
+            - issue_comment.created
+            - push
+          watch:
+            optOut:
+              - ubiquibot
+              - launch-party
+              - staging
+              - production
+          disqualification: 14 days
+          prioritySpeed: true
+          pullRequestRequired: true
   - uses:
-      - plugin: https://command-query-development.deno.dev
+      - plugin: ubiquity-os-marketplace/daemon-merging@development
         with:
-          allowPublicQuery: true
-  - uses:
-      - plugin: https://command-config-development.deno.dev
-        with:
-          model: google/gemini-2.5-flash
+          approvalsRequired:
+            collaborator: 1
+            contributor: 2
+          mergeTimeout:
+            collaborator: 3.5 days
+            contributor: 7 days
+          repos:
+            monitor: []
+            ignore:
+              - ubiquibot
+              - launch-party
+              - staging
+              - production
+          allowedReviewerRoles:
+            - COLLABORATOR
+            - MEMBER
+            - OWNER
   - uses:
       - plugin: https://daemon-pricing-development.deno.dev
         with:
           labels:
-            time:
-              - name: "Time: <15 Minutes"
-                collaboratorOnly: false
-              - name: "Time: <1 Hour"
-                collaboratorOnly: false
-              - name: "Time: <2 Hours"
-                collaboratorOnly: false
-              - name: "Time: <4 Hours"
-                collaboratorOnly: false
-              - name: "Time: <1 Day"
-                collaboratorOnly: false
-              - name: "Time: <1 Week"
-                collaboratorOnly: false
-            priority:
-              - name: "Priority: 0 (Regression)"
-                collaboratorOnly: false
-              - name: "Priority: 1 (Normal)"
-                collaboratorOnly: false
-              - name: "Priority: 2 (Medium)"
-                collaboratorOnly: false
-              - name: "Priority: 3 (High)"
-                collaboratorOnly: false
-              - name: "Priority: 4 (Urgent)"
-                collaboratorOnly: false
-              - name: "Priority: 5 (Emergency)"
-                collaboratorOnly: false
+            time: *timeLabels
+            priority: *priorityLabels
           basePriceMultiplier: 3
           globalConfigUpdate:
             excludeRepos: []
           shouldFundContributorClosedIssue: false
+  - uses:
+      - plugin: ubiquity-os-marketplace/daemon-spec-rewriter@development
+  - uses:
+      - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
   - skipBotEvents: false
     uses:
       - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
@@ -201,46 +257,6 @@ plugins:
           dataCollection:
             maxAttempts: 10
             delayMs: 1000
-  - skipBotEvents: false
-    uses:
-      - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
-        with:
-          warning: 7 days
-          eventWhitelist:
-            - pull_request.review_requested
-            - pull_request.ready_for_review
-            - pull_request_review_comment.created
-            - issue_comment.created
-            - push
-          watch:
-            optOut:
-              - ubiquibot
-              - launch-party
-              - staging
-              - production
-          disqualification: 14 days
-          prioritySpeed: true
-          pullRequestRequired: true
-  - uses:
-      - plugin: ubiquity-os-marketplace/daemon-merging@development
-        with:
-          approvalsRequired:
-            collaborator: 1
-            contributor: 2
-          mergeTimeout:
-            collaborator: 3.5 days
-            contributor: 7 days
-          repos:
-            monitor: []
-            ignore:
-              - ubiquibot
-              - launch-party
-              - staging
-              - production
-          allowedReviewerRoles:
-            - COLLABORATOR
-            - MEMBER
-            - OWNER
   - uses:
       - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
@@ -248,7 +264,3 @@ plugins:
           warningThreshold: 0.75
           jobMatchingThreshold: 0.8
           alwaysRecommend: 0
-  - uses:
-      - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
-  - uses:
-      - plugin: ubiquity-os-marketplace/daemon-spec-rewriter@development
