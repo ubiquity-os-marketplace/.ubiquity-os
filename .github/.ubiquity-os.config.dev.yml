@@ -41,6 +41,99 @@ tcrHtmlConfig: &tcrHtmlConfig
 plugins:
   - skipBotEvents: false
     uses:
+      - plugin: https://command-start-stop-develop.deno.dev
+        with:
+          reviewDelayTolerance: 3 Days
+          taskStaleTimeoutDuration: 30 Days
+          startRequiresWallet: true
+          assignedIssueScope: org
+          maxConcurrentTasks:
+            collaborator: 2
+            contributor: 2
+          emptyWalletText: Please set your wallet address with the /wallet command first
+            and try again.
+          rolesWithReviewAuthority:
+            - COLLABORATOR
+            - OWNER
+            - MEMBER
+            - ADMIN
+          requiredLabelsToStart:
+            - name: "Priority: 1 (Normal)"
+              allowedRoles:
+                - collaborator
+                - contributor
+            - name: "Priority: 2 (Medium)"
+              allowedRoles:
+                - collaborator
+                - contributor
+            - name: "Priority: 3 (High)"
+              allowedRoles:
+                - collaborator
+            - name: "Priority: 4 (Urgent)"
+              allowedRoles:
+                - collaborator
+            - name: "Priority: 5 (Emergency)"
+              allowedRoles:
+                - collaborator
+          taskAccessControl:
+            usdPriceMax:
+              contributor: -1
+              collaborator: Infinity
+  - uses:
+      - plugin: https://command-wallet-development.deno.dev
+        with:
+          registerWalletWithVerification: false
+  - uses:
+      - plugin: ubiquity-os-marketplace/command-ask@development
+        with:
+          model: deepseek/deepseek-r1-0528:free
+          openRouterBaseUrl: https://openrouter.ai/api/v1
+          similarityThreshold: 0.9
+          maxDepth: 3
+  - uses:
+      - plugin: https://command-query-development.deno.dev
+        with:
+          allowPublicQuery: true
+  - uses:
+      - plugin: https://command-config-development.deno.dev
+        with:
+          model: deepseek/deepseek-chat-v3-0324:free
+  - uses:
+      - plugin: https://daemon-pricing-development.deno.dev
+        with:
+          labels:
+            time:
+              - name: "Time: <15 Minutes"
+                collaboratorOnly: false
+              - name: "Time: <1 Hour"
+                collaboratorOnly: false
+              - name: "Time: <2 Hours"
+                collaboratorOnly: false
+              - name: "Time: <4 Hours"
+                collaboratorOnly: false
+              - name: "Time: <1 Day"
+                collaboratorOnly: false
+              - name: "Time: <1 Week"
+                collaboratorOnly: false
+            priority:
+              - name: "Priority: 0 (Regression)"
+                collaboratorOnly: false
+              - name: "Priority: 1 (Normal)"
+                collaboratorOnly: false
+              - name: "Priority: 2 (Medium)"
+                collaboratorOnly: false
+              - name: "Priority: 3 (High)"
+                collaboratorOnly: false
+              - name: "Priority: 4 (Urgent)"
+                collaboratorOnly: false
+              - name: "Priority: 5 (Emergency)"
+                collaboratorOnly: false
+          basePriceMultiplier: 3.0
+          globalConfigUpdate:
+            excludeRepos: []
+          shouldFundContributorClosedIssue: false
+  - skipBotEvents: false
+    uses:
       - plugin: ubiquity-os-marketplace/text-conversation-rewards@development
         with:
           rewards:
@@ -49,6 +142,8 @@ plugins:
             # erc20RewardToken: "0xe91D153E0b41518A2Ce8Dd3D7944Fa863463a97d"
           incentives:
             requirePriceLabel: true
+            limitRewards: true
+            collaboratorOnlyPaymentInvocation: true
             contentEvaluator:
               openAi:
                 endpoint: https://openrouter.ai/api/v1
@@ -104,99 +199,8 @@ plugins:
           dataCollection:
             maxAttempts: 10
             delayMs: 1000
-  - uses:
-      - plugin: ubiquity-os-marketplace/command-ask@development
-        with:
-          model: deepseek/deepseek-r1-0528:free
-          openRouterBaseUrl: https://openrouter.ai/api/v1
-          similarityThreshold: 0.9
-          maxDepth: 3
   - skipBotEvents: false
     uses:
-      - plugin: https://command-start-stop-develop.deno.dev
-        with:
-          reviewDelayTolerance: 3 Days
-          taskStaleTimeoutDuration: 30 Days
-          startRequiresWallet: true
-          maxConcurrentTasks:
-            collaborator: 2
-            contributor: 2
-          emptyWalletText: Please set your wallet address with the /wallet command first
-            and try again.
-          rolesWithReviewAuthority:
-            - COLLABORATOR
-            - OWNER
-            - MEMBER
-            - ADMIN
-          requiredLabelsToStart:
-            - name: "Priority: 1 (Normal)"
-              allowedRoles:
-                - collaborator
-                - contributor
-            - name: "Priority: 2 (Medium)"
-              allowedRoles:
-                - collaborator
-                - contributor
-            - name: "Priority: 3 (High)"
-              allowedRoles:
-                - collaborator
-            - name: "Priority: 4 (Urgent)"
-              allowedRoles:
-                - collaborator
-            - name: "Priority: 5 (Emergency)"
-              allowedRoles:
-                - collaborator
-          assignedIssueScope: org
-          taskAccessControl:
-            usdPriceMax:
-              contributor: -1
-              collaborator: Infinity
-  - uses:
-      - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
-        with:
-          matchThreshold: 0.95
-          warningThreshold: 0.75
-          jobMatchingThreshold: 0.7
-          alwaysRecommend: 0
-  - uses:
-      - plugin: https://command-query-development.deno.dev
-        with:
-          allowPublicQuery: true
-  - uses:
-      - plugin: https://daemon-pricing-development.deno.dev
-        with:
-          labels:
-            time:
-              - name: "Time: <15 Minutes"
-                collaboratorOnly: false
-              - name: "Time: <1 Hour"
-                collaboratorOnly: false
-              - name: "Time: <2 Hours"
-                collaboratorOnly: false
-              - name: "Time: <4 Hours"
-                collaboratorOnly: false
-              - name: "Time: <1 Day"
-                collaboratorOnly: false
-              - name: "Time: <1 Week"
-                collaboratorOnly: false
-            priority:
-              - name: "Priority: 0 (Regression)"
-                collaboratorOnly: false
-              - name: "Priority: 1 (Normal)"
-                collaboratorOnly: false
-              - name: "Priority: 2 (Medium)"
-                collaboratorOnly: false
-              - name: "Priority: 3 (High)"
-                collaboratorOnly: false
-              - name: "Priority: 4 (Urgent)"
-                collaboratorOnly: false
-              - name: "Priority: 5 (Emergency)"
-                collaboratorOnly: false
-          basePriceMultiplier: 3.0
-          globalConfigUpdate:
-            excludeRepos: []
-          shouldFundContributorClosedIssue: false
-  - uses:
       - plugin: ubiquity-os-marketplace/daemon-disqualifier@development
         with:
           warning: 7 days
@@ -236,14 +240,13 @@ plugins:
             - MEMBER
             - OWNER
   - uses:
-      - plugin: https://command-wallet-development.deno.dev
+      - plugin: ubiquity-os-marketplace/text-vector-embeddings@development
         with:
-          registerWalletWithVerification: false
+          matchThreshold: 0.95
+          warningThreshold: 0.75
+          jobMatchingThreshold: 0.7
+          alwaysRecommend: 0
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
-  - uses:
-      - plugin: https://command-config-development.deno.dev
-        with:
-          model: deepseek/deepseek-chat-v3-0324:free
   - uses:
       - plugin: ubiquity-os-marketplace/daemon-spec-rewriter@development
