@@ -209,6 +209,7 @@ plugins:
             limitRewards: true
             collaboratorOnlyPaymentInvocation: true
             contentEvaluator:
+              enabled: true
               openAi:
                 endpoint: https://openrouter.ai/api/v1
                 model: google/gemini-2.5-flash
