@@ -58,6 +58,8 @@ plugins:
             - MEMBER
             - ADMIN
           requiredLabelsToStart:
+            - name: "Priority: 0 (Regression)"
+              allowedRoles: *allRoles
             - name: "Priority: 1 (Normal)"
               allowedRoles:
                 - collaborator
@@ -128,7 +130,7 @@ plugins:
                 collaboratorOnly: false
               - name: "Priority: 5 (Emergency)"
                 collaboratorOnly: false
-          basePriceMultiplier: 3.0
+          basePriceMultiplier: 3
           globalConfigUpdate:
             excludeRepos: []
           shouldFundContributorClosedIssue: false
@@ -244,7 +246,7 @@ plugins:
         with:
           matchThreshold: 0.95
           warningThreshold: 0.75
-          jobMatchingThreshold: 0.7
+          jobMatchingThreshold: 0.8
           alwaysRecommend: 0
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
