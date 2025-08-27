@@ -74,14 +74,15 @@ plugins:
                     - ISSUE_AUTHOR
                     - ISSUE_COLLABORATOR
                     - PULL_COLLABORATOR
-                  multiplier: 1
+                    - PULL_SPECIFICATION
+                  multiplier: 2
                   rewards:
                     wordValue: 0.1
                     html: *tcrHtmlConfig
                 - role:
                     - ISSUE_CONTRIBUTOR
                     - ISSUE_ASSIGNEE
-                  multiplier: 0.25
+                  multiplier: 1
                   rewards:
                     wordValue: 0.1
                     html: *tcrHtmlConfig
@@ -89,7 +90,6 @@ plugins:
                     - PULL_AUTHOR
                     - PULL_CONTRIBUTOR
                     - PULL_ASSIGNEE
-                    - PULL_SPECIFICATION
                   multiplier: 0
                   rewards:
                     wordValue: 0
@@ -192,7 +192,7 @@ plugins:
                 collaboratorOnly: false
               - name: "Priority: 5 (Emergency)"
                 collaboratorOnly: false
-          basePriceMultiplier: 2.0
+          basePriceMultiplier: 3.0
           globalConfigUpdate:
             excludeRepos: []
           shouldFundContributorClosedIssue: false
