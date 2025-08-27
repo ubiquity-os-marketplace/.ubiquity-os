@@ -187,7 +187,13 @@ plugins:
             excludeRepos: []
           shouldFundContributorClosedIssue: false
   - uses:
-      - plugin: ubiquity-os-marketplace/daemon-spec-rewriter@development
+      - plugin: ubiquity-os-marketplace/daemon-pull-review@development
+        with:
+          openRouterAiModel: google/gemini-2.5-flash
+          openRouterBaseUrl: https://openrouter.ai/api/v1
+          tokenLimit:
+            context: 200000
+            completion: 4096
   - uses:
       - plugin: ubiquity-os-marketplace/personal-agent-bridge@development
   - skipBotEvents: false
