@@ -268,3 +268,5 @@ plugins:
           warningThreshold: 0.75
           jobMatchingThreshold: 0.8
           alwaysRecommend: 0
+  - uses:
+      - plugin: ubiquity-os-marketplace/daemon-spec-rewriter@development
