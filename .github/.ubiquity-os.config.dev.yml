@@ -216,7 +216,7 @@ plugins:
                   relevance: 1
             externalContent:
               llmImageModel:
-                model: openai/gpt-5
+                model: openai/gpt-4o
               llmWebsiteModel:
                 model: google/gemini-2.5-flash
             userExtractor:
