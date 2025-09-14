@@ -229,29 +229,20 @@ plugins:
               multipliers:
                 - role:
                     - ISSUE_AUTHOR
-                  multiplier: 3
-                  rewards:
-                    wordValue: 0.1
-                    html: *tcrHtmlConfig
-                - role:
-                    - ISSUE_SPECIFICATION
-                  multiplier: 2
-                  rewards:
-                    wordValue: 0.1
-                    html: *tcrHtmlConfig
-                - role:
                     - PULL_SPECIFICATION
-                  multiplier: 2
-                  rewards:
-                    wordValue: 0.1
-                    html: *tcrHtmlConfig
-                - role:
                     - ISSUE_COLLABORATOR
                     - PULL_COLLABORATOR
                   multiplier: 2
                   rewards:
                     wordValue: 0.1
                     html: *tcrHtmlConfig
+                - role:
+                    - ISSUE_SPECIFICATION
+                  multiplier: 3
+                  rewards:
+                    wordValue: 0.1
+                    html: *tcrHtmlConfig
+
                 - role:
                     - ISSUE_CONTRIBUTOR
                     - ISSUE_ASSIGNEE
