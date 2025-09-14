@@ -100,7 +100,8 @@ plugins:
           maxConcurrentTasks:
             collaborator: 2
             contributor: 2
-          emptyWalletText: Please set your wallet address with the /wallet command first
+          emptyWalletText:
+            Please set your wallet address with the /wallet command first
             and try again.
           rolesWithReviewAuthority:
             - COLLABORATOR
