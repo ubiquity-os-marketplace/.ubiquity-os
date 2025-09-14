@@ -100,7 +100,8 @@ plugins:
           maxConcurrentTasks:
             collaborator: 2
             contributor: 2
-          emptyWalletText: Please set your wallet address with the /wallet command first
+          emptyWalletText:
+            Please set your wallet address with the /wallet command first
             and try again.
           rolesWithReviewAuthority:
             - COLLABORATOR
@@ -227,11 +228,26 @@ plugins:
             formattingEvaluator:
               multipliers:
                 - role:
-                    - ISSUE_SPECIFICATION
                     - ISSUE_AUTHOR
+                  multiplier: 3
+                  rewards:
+                    wordValue: 0.1
+                    html: *tcrHtmlConfig
+                - role:
+                    - ISSUE_SPECIFICATION
+                  multiplier: 2
+                  rewards:
+                    wordValue: 0.1
+                    html: *tcrHtmlConfig
+                - role:
+                    - PULL_SPECIFICATION
+                  multiplier: 2
+                  rewards:
+                    wordValue: 0.1
+                    html: *tcrHtmlConfig
+                - role:
                     - ISSUE_COLLABORATOR
                     - PULL_COLLABORATOR
-                    - PULL_SPECIFICATION
                   multiplier: 2
                   rewards:
                     wordValue: 0.1
