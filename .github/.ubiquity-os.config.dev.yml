@@ -256,3 +256,4 @@ plugins:
       jobMatchingThreshold: 0.8
       alwaysRecommend: 0
   ubiquity-os-marketplace/daemon-spec-rewriter@development:
+  https://daemon-xp-development.deno.dev:
