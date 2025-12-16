@@ -259,6 +259,6 @@ plugins:
 
   "https://daemon-xp-development.deno.dev":
 
-  ubiquity-os-marketplace/daemon-planner@feat-planner:
+  ubiquity-os-marketplace/daemon-planner@feat/planner:
     with:
       dryRun: true
