@@ -122,7 +122,7 @@ plugins:
         usdPriceMax:
           contributor: -1
           collaborator: Infinity
-  https://command-wallet-development.deno.dev:
+  ubiquity-os-marketplace/command-wallet@development:
     with:
       registerWalletWithVerification: false
   ubiquity-os-marketplace/daemon-disqualifier@development:
@@ -162,7 +162,7 @@ plugins:
         - COLLABORATOR
         - MEMBER
         - OWNER
-  https://daemon-pricing-development.deno.dev:
+  ubiquity-os-marketplace/daemon-pricing@development:
     with:
       labels:
         time: *timeLabels
@@ -257,7 +257,7 @@ plugins:
       alwaysRecommend: 0
   ubiquity-os-marketplace/daemon-spec-rewriter@development:
 
-  "https://daemon-xp-development.deno.dev":
+  ubiquity-os-marketplace/daemon-xp@development:
 
   ubiquity-os-marketplace/daemon-planner@feat/planner:
     with:
