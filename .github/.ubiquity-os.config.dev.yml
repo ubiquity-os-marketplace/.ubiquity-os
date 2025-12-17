@@ -76,13 +76,13 @@ plugins:
       openRouterBaseUrl: https://openrouter.ai/api/v1
       similarityThreshold: 0.9
       maxDepth: 3
-  https://command-config-development.deno.dev:
+  ubiquity-os-marketplace/command-config@development:
     with:
       model: google/gemini-2.5-flash
-  https://command-query-development.deno.dev:
+  ubiquity-os-marketplace/command-query@development:
     with:
       allowPublicQuery: true
-  https://command-start-stop-develop.deno.dev:
+  ubiquity-os-marketplace/command-start-stop@development:
     with:
       reviewDelayTolerance: 3 Days
       taskStaleTimeoutDuration: 30 Days
