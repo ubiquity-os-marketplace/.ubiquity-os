@@ -1,0 +1,96 @@
+name: Refresh marketplace plugin registry
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate registry
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const path = require("path");
+
+            const org = "ubiquity-os-marketplace";
+            const repos = await github.paginate(github.rest.repos.listForOrg, {
+              org,
+              per_page: 100,
+              type: "public",
+            });
+
+            const plugins = [];
+
+            for (const repo of repos) {
+              if (!repo?.name) continue;
+              try {
+                const { data } = await github.rest.repos.getContent({
+                  owner: org,
+                  repo: repo.name,
+                  path: "manifest.json",
+                  ref: repo.default_branch,
+                });
+
+                if (Array.isArray(data) || !data?.content) continue;
+                const raw = Buffer.from(data.content, "base64").toString("utf8");
+                const manifest = JSON.parse(raw);
+
+                const configProps =
+                  manifest?.configuration?.properties && typeof manifest.configuration.properties === "object"
+                    ? Object.keys(manifest.configuration.properties).sort((a, b) => a.localeCompare(b))
+                    : [];
+
+                plugins.push({
+                  owner: org,
+                  repo: repo.name,
+                  default_branch: repo.default_branch || "main",
+                  manifest: {
+                    name: manifest?.name ?? "",
+                    short_name: manifest?.short_name ?? "",
+                    description: manifest?.description ?? "",
+                    homepage_url: manifest?.homepage_url ?? "",
+                    listeners: manifest?.["ubiquity:listeners"] ?? [],
+                    commands: manifest?.commands ?? {},
+                    config_properties: configProps,
+                  },
+                });
+              } catch {
+                // Not every repo is a plugin repo; ignore missing/invalid manifests.
+              }
+            }
+
+            plugins.sort((a, b) => a.repo.localeCompare(b.repo));
+
+            const out = {
+              generated_at: new Date().toISOString(),
+              source_org: org,
+              count: plugins.length,
+              plugins,
+            };
+
+            const outPath = path.join(process.env.GITHUB_WORKSPACE, ".github", "ubiquity-os-marketplace.plugin-registry.json");
+            fs.mkdirSync(path.dirname(outPath), { recursive: true });
+            fs.writeFileSync(outPath, JSON.stringify(out, null, 2) + "\n", "utf8");
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/ubiquity-os-marketplace.plugin-registry.json
+          git commit -m "chore: refresh plugin registry"
+          git push
+
