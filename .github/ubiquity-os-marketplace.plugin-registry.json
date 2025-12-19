@@ -1,0 +1,460 @@
+{
+  "generated_at": "2025-12-19T04:34:01.223Z",
+  "source_org": "ubiquity-os-marketplace",
+  "count": 13,
+  "plugins": [
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "command-codex",
+      "default_branch": "development",
+      "manifest": {
+        "name": "command-codex",
+        "short_name": "",
+        "description": "Run OpenAI Codex CLI agentically via GitHub Actions and return results as a PR/comment.",
+        "homepage_url": "",
+        "listeners": [
+          "issue_comment.created"
+        ],
+        "commands": {
+          "codex": {
+            "ubiquity:example": "/codex add a unit test for src/foo.ts",
+            "description": "Run Codex CLI to implement a requested change (creates/updates a PR).",
+            "parameters": {}
+          }
+        },
+        "config_properties": [
+          "allowedAuthorAssociations",
+          "branchPrefix",
+          "codexArgs",
+          "commitMessage",
+          "denyForkPRs",
+          "draftPr",
+          "effort",
+          "maxRuntimeMinutes",
+          "mode",
+          "model",
+          "passAuthTokenToCodex",
+          "requireExplicitInvocation",
+          "safetyStrategy",
+          "sandbox",
+          "testCommand"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "command-config",
+      "default_branch": "development",
+      "manifest": {
+        "name": "command-config",
+        "short_name": "ubiquity-os-marketplace/command-config@development",
+        "description": "Edits UbiquityOS configuration files based on natural language queries.",
+        "homepage_url": "https://command-config-development.deno.dev",
+        "listeners": [],
+        "commands": {
+          "config": {
+            "ubiquity:example": "/config <editor_instruction>",
+            "description": "Configure the UbiquityOS plugin.",
+            "parameters": {
+              "editor_instruction": {
+                "description": "The instruction to make changes to the configuration.",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "config_properties": [
+          "baseUrl",
+          "configPath",
+          "defaultTargets",
+          "devConfigPath",
+          "model",
+          "parserPath"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "command-query",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Query user",
+        "short_name": "ubiquity-os-marketplace/command-query@development",
+        "description": "Queries a user and retrieves its related information, such as the wallet, the label access control, or the current XP.",
+        "homepage_url": "https://command-query-development.deno.dev",
+        "listeners": [
+          "issue_comment.created"
+        ],
+        "commands": {
+          "query": {
+            "ubiquity:example": "/query @UbiquityOS",
+            "description": "Returns the user's wallet, access, and multiplier information.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "description": "Github username",
+                  "type": "string"
+                }
+              }
+            },
+            "examples": [
+              {
+                "commandInvocation": "@UbiquityOS what is my wallet address?",
+                "parameters": {
+                  "repositoryOwner": "repoOwnerUsername",
+                  "repositoryName": "example-repo",
+                  "issueNumber": 42,
+                  "author": "user1"
+                },
+                "expectedToolCallResult": {
+                  "function": "command-query",
+                  "parameters": {
+                    "username": "user1"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "config_properties": [
+          "allowPublicQuery"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "command-start-stop",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Start | Stop",
+        "short_name": "gentlementlegen/command-start-stop@fix/sdk-cfg-fetch",
+        "description": "Assign or un-assign yourself from an issue/task.",
+        "homepage_url": "https://command-start-stop-develop.deno.dev",
+        "listeners": [
+          "issues.unassigned",
+          "pull_request.opened",
+          "pull_request.edited"
+        ],
+        "commands": {
+          "start": {
+            "ubiquity:example": "/start",
+            "description": "Assign yourself and/or others to the issue/task.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "teammates": {
+                  "description": "Users other than yourself to assign to the issue",
+                  "type": "array",
+                  "items": {
+                    "description": "Github username",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "stop": {
+            "ubiquity:example": "/stop",
+            "description": "Unassign yourself from the issue/task.",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "config_properties": [
+          "assignedIssueScope",
+          "emptyWalletText",
+          "maxConcurrentTasks",
+          "requiredLabelsToStart",
+          "reviewDelayTolerance",
+          "rolesWithReviewAuthority",
+          "startRequiresWallet",
+          "taskAccessControl",
+          "taskStaleTimeoutDuration"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "command-wallet",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Wallet",
+        "short_name": "ubiquity-os-marketplace/command-wallet@development",
+        "description": "Allows users to register their wallets to collect rewards.",
+        "homepage_url": "https://command-wallet-development.deno.dev",
+        "listeners": [],
+        "commands": {
+          "wallet": {
+            "ubiquity:example": "/wallet ubq.eth",
+            "description": "Register your wallet address for payments. Use '/wallet unset' to unlink your wallet.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "walletAddress": {
+                  "description": "Ethereum address or Ethereum Name Service",
+                  "type": "string"
+                },
+                "unset": {
+                  "description": "Unsets the wallet associated with a user",
+                  "type": "boolean",
+                  "default": false
+                }
+              }
+            }
+          }
+        },
+        "config_properties": [
+          "registerWalletWithVerification"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-disqualifier",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Daemon Disqualifier",
+        "short_name": "ubiquity-os-marketplace/daemon-disqualifier@development",
+        "description": "Watches user activity on issues, sends reminders on disqualification threshold, and unassign inactive users.",
+        "homepage_url": "https://daemon-disqualifier-develo.deno.dev",
+        "listeners": [
+          "issues.assigned",
+          "issue_comment.edited",
+          "issues.reopened"
+        ],
+        "commands": {},
+        "config_properties": [
+          "availableDeadlineExtensions",
+          "eventWhitelist",
+          "followUpInterval",
+          "negligenceThreshold",
+          "prioritySpeed",
+          "pullRequestRequired"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-merging",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Daemon merging",
+        "short_name": "ubiquity-os-marketplace/daemon-merging@development",
+        "description": "Automatically merge pull-requests.",
+        "homepage_url": "https://daemon-merging-development.deno.dev",
+        "listeners": [
+          "issues.assigned",
+          "issues.edited",
+          "issues.unassigned",
+          "issues.closed",
+          "issues.reopened"
+        ],
+        "commands": {},
+        "config_properties": [
+          "allowedReviewerRoles",
+          "approvalsRequired",
+          "excludedRepos",
+          "mergeTimeout"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-planner",
+      "default_branch": "development",
+      "manifest": {
+        "name": "ts-template",
+        "short_name": "ubiquity-os-marketplace/daemon-planner@development",
+        "description": "ts-template for UbiquityOS plugins.",
+        "homepage_url": "",
+        "listeners": [],
+        "commands": {
+          "hello": {
+            "ubiquity:example": "/hello argument",
+            "description": "Hello command with an argument."
+          }
+        },
+        "config_properties": [
+          "configurableResponse",
+          "customStringsUrl"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-pricing",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Assistive pricing",
+        "short_name": "ubiquity-os-marketplace/daemon-pricing@development",
+        "description": "Handles assistive pricing, and allows for users to modify labels.",
+        "homepage_url": "https://daemon-pricing-development.deno.dev",
+        "listeners": [
+          "repository.created",
+          "issues.opened",
+          "issues.labeled",
+          "issues.unlabeled",
+          "label.edited",
+          "push"
+        ],
+        "commands": {
+          "time": {
+            "ubiquity:example": "/time 1 Day",
+            "description": "Sets the time label for the given task.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "duration": {
+                  "description": "The duration of the task.",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "config_properties": [
+          "basePriceMultiplier",
+          "globalConfigUpdate",
+          "labels",
+          "shouldFundContributorClosedIssue"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-spec-rewriter",
+      "default_branch": "development",
+      "manifest": {
+        "name": "daemon-spec-rewriter",
+        "short_name": "ubiquity-os-marketplace/daemon-spec-rewriter@development",
+        "description": "Rewrites the specification of an issue based on GitHub's issue conversation",
+        "homepage_url": "",
+        "listeners": [
+          "issues.labeled",
+          "issues.assigned",
+          "issues.unassigned",
+          "issues.edited",
+          "issues.reopened",
+          "issues.unlabeled"
+        ],
+        "commands": {
+          "rewrite": {
+            "ubiquity:example": "/rewrite",
+            "description": "Rewrites the specification of an issue based on GitHub's issue conversation",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "config_properties": [
+          "cooldown",
+          "eventWhiteList",
+          "maxRetryAttempts",
+          "openRouterAiModel",
+          "openRouterBaseUrl"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-xp",
+      "default_branch": "development",
+      "manifest": {
+        "name": "daemon-xp",
+        "short_name": "ubiquity-os-marketplace/daemon-xp@development",
+        "description": "Handles XP for users.",
+        "homepage_url": "https://daemon-xp-development.deno.dev",
+        "listeners": [
+          "issues.unassigned",
+          "issue_comment.created",
+          "pull_request_review_comment.created",
+          "pull_request_review.submitted"
+        ],
+        "commands": {
+          "xp": {
+            "ubiquity:example": "/xp @username",
+            "description": "Gets the XP for a user. If no user is specified, the user who invoked the command will be used.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "description": "The username of the user to get XP for."
+                }
+              }
+            }
+          }
+        },
+        "config_properties": [
+          "disableCommentPosting",
+          "disqualificationBanThreshold"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "text-conversation-rewards",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Conversation rewards",
+        "short_name": "ubiquity-os-marketplace/text-conversation-rewards@development",
+        "description": "Generate rewards for on topic conversation for closing issues as complete.",
+        "homepage_url": "",
+        "listeners": [
+          "issues.closed",
+          "pull_request.closed"
+        ],
+        "commands": {
+          "finish": {
+            "ubiquity:example": "/finish",
+            "description": "Forcefully close the task and generate rewards.",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "config_properties": [
+          "dataCollection",
+          "incentives",
+          "rewards"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "text-vector-embeddings",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Text Vector Embeddings",
+        "short_name": "ubiquity-os-marketplace/text-vector-embeddings@development",
+        "description": "Enables the storage, updating, and deletion of issue comment embeddings.",
+        "homepage_url": "https://text-vector-embeddings-dev.deno.dev",
+        "listeners": [
+          "issue_comment.created",
+          "issue_comment.edited",
+          "issue_comment.deleted",
+          "issues.opened",
+          "issues.edited",
+          "issues.deleted",
+          "issues.labeled",
+          "issues.closed"
+        ],
+        "commands": {},
+        "config_properties": [
+          "alwaysRecommend",
+          "annotateThreshold",
+          "dedupeMatchThreshold",
+          "dedupeWarningThreshold",
+          "demoFlag",
+          "jobMatchingThreshold",
+          "llm"
+        ]
+      }
+    }
+  ]
+}
