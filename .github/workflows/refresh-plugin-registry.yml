@@ -1,0 +1,187 @@
+name: Refresh marketplace plugin registry
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate registry
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const path = require("path");
+
+            const org = "ubiquity-os-marketplace";
+            const workspace = process.env.GITHUB_WORKSPACE || process.cwd();
+            const registryPath = path.join(workspace, ".github", "ubiquity-os-marketplace.plugin-registry.json");
+            const metaPath = path.join(workspace, ".github", "ubiquity-os-marketplace.plugin-registry.meta.json");
+
+            const loadJson = (filePath) => {
+              if (!fs.existsSync(filePath)) return null;
+              try {
+                return JSON.parse(fs.readFileSync(filePath, "utf8"));
+              } catch {
+                return null;
+              }
+            };
+
+            const existingRegistry = loadJson(registryPath);
+            const existingMeta = loadJson(metaPath);
+
+            const existingPlugins = Array.isArray(existingRegistry?.plugins) ? existingRegistry.plugins : [];
+            const existingPluginsByRepo = new Map(existingPlugins.map((plugin) => [plugin.repo, plugin]));
+            const previousRepoState =
+              existingMeta?.repo_state && typeof existingMeta.repo_state === "object" ? existingMeta.repo_state : {};
+
+            const headers = {
+              "User-Agent": "ubiquity-os-marketplace-plugin-registry",
+              Accept: "application/vnd.github+json",
+            };
+
+            const fetchJson = async (url) => {
+              const response = await fetch(url, { headers });
+              if (!response.ok) {
+                throw new Error(`Request failed: ${response.status} ${response.statusText} (${url})`);
+              }
+              return response.json();
+            };
+
+            const fetchAllRepos = async () => {
+              const repos = [];
+              let page = 1;
+              while (true) {
+                const url = `https://api.github.com/orgs/${org}/repos?per_page=100&type=public&page=${page}`;
+                const data = await fetchJson(url);
+                if (!Array.isArray(data) || data.length === 0) break;
+                repos.push(...data);
+                if (data.length < 100) break;
+                page += 1;
+              }
+              return repos;
+            };
+
+            const fetchManifest = async (owner, repo, ref) => {
+              const url = `https://api.github.com/repos/${owner}/${repo}/contents/manifest.json?ref=${encodeURIComponent(
+                ref
+              )}`;
+              const response = await fetch(url, { headers });
+              if (response.status === 404) return null;
+              if (!response.ok) {
+                throw new Error(`Manifest request failed: ${response.status} ${response.statusText} (${owner}/${repo})`);
+              }
+              const data = await response.json();
+              if (Array.isArray(data) || !data?.content) return null;
+              const raw = Buffer.from(data.content, "base64").toString("utf8");
+              return JSON.parse(raw);
+            };
+
+            const repos = (await fetchAllRepos()).filter((repo) => repo?.name);
+            repos.sort((a, b) => a.name.localeCompare(b.name));
+
+            const repoState = {};
+            const plugins = [];
+
+            for (const repo of repos) {
+              const defaultBranch = repo.default_branch || "main";
+              repoState[repo.name] = { pushed_at: repo.pushed_at ?? null, default_branch: defaultBranch };
+
+              const previousState = previousRepoState[repo.name];
+              const cachedPlugin = existingPluginsByRepo.get(repo.name);
+
+              const needsRefresh =
+                !cachedPlugin ||
+                !previousState ||
+                previousState.pushed_at !== repo.pushed_at ||
+                previousState.default_branch !== defaultBranch;
+
+              if (!needsRefresh && cachedPlugin) {
+                plugins.push(cachedPlugin);
+                continue;
+              }
+
+              try {
+                const manifest = await fetchManifest(org, repo.name, defaultBranch);
+                if (!manifest) continue;
+
+                const configProps =
+                  manifest?.configuration?.properties && typeof manifest.configuration.properties === "object"
+                    ? Object.keys(manifest.configuration.properties).sort((a, b) => a.localeCompare(b))
+                    : [];
+
+                plugins.push({
+                  owner: org,
+                  repo: repo.name,
+                  default_branch: defaultBranch,
+                  manifest: {
+                    name: manifest?.name ?? "",
+                    short_name: manifest?.short_name ?? "",
+                    description: manifest?.description ?? "",
+                    homepage_url: manifest?.homepage_url ?? "",
+                    listeners: manifest?.["ubiquity:listeners"] ?? [],
+                    commands: manifest?.commands ?? {},
+                    config_properties: configProps,
+                  },
+                });
+              } catch (error) {
+                console.warn(`Skipping ${repo.name}: ${error.message}`);
+              }
+            }
+
+            plugins.sort((a, b) => a.repo.localeCompare(b.repo));
+
+            const pluginsChanged =
+              !existingRegistry ||
+              existingRegistry?.count !== plugins.length ||
+              JSON.stringify(existingRegistry?.plugins ?? []) !== JSON.stringify(plugins);
+
+            const repoStateChanged = JSON.stringify(previousRepoState) !== JSON.stringify(repoState);
+
+            if (pluginsChanged) {
+              const registryOut = {
+                generated_at: new Date().toISOString(),
+                source_org: org,
+                count: plugins.length,
+                plugins,
+              };
+
+              fs.mkdirSync(path.dirname(registryPath), { recursive: true });
+              fs.writeFileSync(registryPath, JSON.stringify(registryOut, null, 2) + "\n", "utf8");
+            } else {
+              console.log("Registry unchanged; skipping write.");
+            }
+
+            if (repoStateChanged) {
+              const metaOut = {
+                generated_at: new Date().toISOString(),
+                source_org: org,
+                repo_state: repoState,
+              };
+
+              fs.mkdirSync(path.dirname(metaPath), { recursive: true });
+              fs.writeFileSync(metaPath, JSON.stringify(metaOut, null, 2) + "\n", "utf8");
+            } else {
+              console.log("Repo state unchanged; skipping meta write.");
+            }
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git add .github/ubiquity-os-marketplace.plugin-registry.json .github/ubiquity-os-marketplace.plugin-registry.meta.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh plugin registry"
+          git push
