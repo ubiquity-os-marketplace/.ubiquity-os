@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-19T04:34:01.224Z",
+  "generated_at": "2025-12-20T03:55:37.969Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,7 +7,7 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2025-12-19T04:28:25Z",
+      "pushed_at": "2025-12-19T04:34:01Z",
       "default_branch": "main"
     },
     "command-codex": {
@@ -15,19 +15,27 @@
       "default_branch": "development"
     },
     "command-config": {
-      "pushed_at": "2025-12-19T04:28:33Z",
+      "pushed_at": "2025-12-19T07:43:00Z",
+      "default_branch": "development"
+    },
+    "command-ping": {
+      "pushed_at": "2025-12-19T09:56:22Z",
       "default_branch": "development"
     },
     "command-query": {
       "pushed_at": "2025-12-19T04:28:13Z",
       "default_branch": "development"
     },
+    "command-smoke": {
+      "pushed_at": "2025-12-19T11:47:15Z",
+      "default_branch": "main"
+    },
     "command-start-stop": {
       "pushed_at": "2025-12-19T04:28:15Z",
       "default_branch": "development"
     },
     "command-wallet": {
-      "pushed_at": "2025-12-19T04:28:19Z",
+      "pushed_at": "2025-12-19T06:18:48Z",
       "default_branch": "development"
     },
     "daemon-disqualifier": {
@@ -35,11 +43,11 @@
       "default_branch": "development"
     },
     "daemon-merging": {
-      "pushed_at": "2025-12-19T04:28:21Z",
+      "pushed_at": "2025-12-19T06:18:28Z",
       "default_branch": "development"
     },
     "daemon-planner": {
-      "pushed_at": "2025-12-19T04:28:37Z",
+      "pushed_at": "2025-12-19T06:18:18Z",
       "default_branch": "development"
     },
     "daemon-pricing": {
@@ -51,7 +59,7 @@
       "default_branch": "development"
     },
     "daemon-xp": {
-      "pushed_at": "2025-12-19T04:28:35Z",
+      "pushed_at": "2025-12-19T06:19:10Z",
       "default_branch": "development"
     },
     "text-conversation-rewards": {
@@ -59,7 +67,7 @@
       "default_branch": "development"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2025-12-19T04:28:23Z",
+      "pushed_at": "2025-12-19T11:27:15Z",
       "default_branch": "development"
     }
   }

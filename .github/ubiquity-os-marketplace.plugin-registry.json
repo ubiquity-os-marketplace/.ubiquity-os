@@ -1,7 +1,7 @@
 {
-  "generated_at": "2025-12-19T04:34:01.223Z",
+  "generated_at": "2025-12-20T03:55:37.968Z",
   "source_org": "ubiquity-os-marketplace",
-  "count": 13,
+  "count": 15,
   "plugins": [
     {
       "owner": "ubiquity-os-marketplace",
@@ -75,6 +75,31 @@
     },
     {
       "owner": "ubiquity-os-marketplace",
+      "repo": "command-ping",
+      "default_branch": "development",
+      "manifest": {
+        "name": "Ping",
+        "short_name": "ubiquity-os-marketplace/command-ping@development",
+        "description": "Replies \"pong\" when /ping is invoked.",
+        "homepage_url": "https://github.com/ubiquity-os-marketplace/command-ping",
+        "listeners": [
+          "issue_comment.created"
+        ],
+        "commands": {
+          "ping": {
+            "ubiquity:example": "/ping",
+            "description": "Replies with pong.",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "config_properties": []
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
       "repo": "command-query",
       "default_branch": "development",
       "manifest": {
@@ -120,6 +145,31 @@
         "config_properties": [
           "allowPublicQuery"
         ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "command-smoke",
+      "default_branch": "main",
+      "manifest": {
+        "name": "Smoke",
+        "short_name": "ubiquity-os-marketplace/command-smoke@main",
+        "description": "Replies \"smoke ok\" when /smoke is invoked.",
+        "homepage_url": "https://github.com/ubiquity-os-marketplace/command-smoke",
+        "listeners": [
+          "issue_comment.created"
+        ],
+        "commands": {
+          "smoke": {
+            "ubiquity:example": "/smoke",
+            "description": "Replies with smoke ok and context.",
+            "parameters": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        },
+        "config_properties": []
       }
     },
     {
