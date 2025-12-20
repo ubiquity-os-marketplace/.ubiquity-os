@@ -120,7 +120,8 @@ plugins:
             - collaborator
       taskAccessControl:
         usdPriceMax:
-          contributor: -1
+          # contributor: -1
+          contributor: Infinity
           collaborator: Infinity
   ubiquity-os-marketplace/command-wallet@development:
     with:
