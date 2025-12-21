@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-20T03:55:37.968Z",
+  "generated_at": "2025-12-21T04:07:36.560Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 15,
   "plugins": [
@@ -494,7 +494,24 @@
           "issues.labeled",
           "issues.closed"
         ],
-        "commands": {},
+        "commands": {
+          "recommendation": {
+            "ubiquity:example": "/recommendation @alice @bob",
+            "description": "Returns recommended contributors for the current issue, optionally filtered to a list of GitHub usernames.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "description": "Optional list of GitHub usernames to filter recommendations to.",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
         "config_properties": [
           "alwaysRecommend",
           "annotateThreshold",
