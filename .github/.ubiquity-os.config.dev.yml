@@ -251,8 +251,10 @@ plugins:
         delayMs: 1000
   ubiquity-os-marketplace/text-vector-embeddings@development:
     with:
+      dedupeMatchThreshold: 0.95
+      dedupeWarningThreshold: 0.8
       matchThreshold: 0.95
-      warningThreshold: 0.75
+      warningThreshold: 0.8
       jobMatchingThreshold: 0.8
       alwaysRecommend: 0
   ubiquity-os-marketplace/daemon-spec-rewriter@development:
