@@ -264,3 +264,4 @@ plugins:
   ubiquity-os-marketplace/daemon-planner@feat/planner:
     with:
       dryRun: true
+      assignedTaskLimit: 4
