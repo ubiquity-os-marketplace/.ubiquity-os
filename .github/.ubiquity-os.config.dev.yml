@@ -261,7 +261,7 @@ plugins:
 
   ubiquity-os-marketplace/daemon-xp@development:
 
-  ubiquity-os-marketplace/daemon-planner@feat/planner:
+  ubiquity-os-marketplace/daemon-planner@development:
     with:
       dryRun: true
-      assignedTaskLimit: 4
+      assignedTaskLimit: 2
