@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-21T04:07:36.560Z",
+  "generated_at": "2025-12-24T04:04:49.740Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 15,
   "plugins": [
@@ -316,20 +316,21 @@
       "repo": "daemon-planner",
       "default_branch": "development",
       "manifest": {
-        "name": "ts-template",
+        "name": "@ubiquity-os/daemon-planner",
         "short_name": "ubiquity-os-marketplace/daemon-planner@development",
-        "description": "ts-template for UbiquityOS plugins.",
+        "description": "Automated sprint planner that assigns GitHub issues based on contributor capacity.",
         "homepage_url": "",
-        "listeners": [],
-        "commands": {
-          "hello": {
-            "ubiquity:example": "/hello argument",
-            "description": "Hello command with an argument."
-          }
-        },
+        "listeners": [
+          "issues.opened",
+          "issues.reopened",
+          "issues.closed"
+        ],
+        "commands": {},
         "config_properties": [
-          "configurableResponse",
-          "customStringsUrl"
+          "assignedTaskLimit",
+          "dryRun",
+          "organizations",
+          "recommendationThreshold"
         ]
       }
     },
