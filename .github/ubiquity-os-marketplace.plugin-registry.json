@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-12-24T04:04:49.740Z",
+  "generated_at": "2025-12-29T04:18:12.038Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 15,
   "plugins": [
@@ -9,7 +9,7 @@
       "default_branch": "development",
       "manifest": {
         "name": "command-codex",
-        "short_name": "",
+        "short_name": "ubiquity-os-marketplace/command-codex@development",
         "description": "Run OpenAI Codex CLI agentically via GitHub Actions and return results as a PR/comment.",
         "homepage_url": "",
         "listeners": [
