@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-02T04:10:44.717Z",
+  "generated_at": "2026-01-03T04:02:12.469Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,7 +7,7 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-01-02T02:16:04Z",
+      "pushed_at": "2026-01-02T04:10:45Z",
       "default_branch": "main"
     },
     "command-codex": {
@@ -15,7 +15,7 @@
       "default_branch": "development"
     },
     "command-config": {
-      "pushed_at": "2026-01-02T02:16:12Z",
+      "pushed_at": "2026-01-02T07:56:03Z",
       "default_branch": "development"
     },
     "command-ping": {
@@ -23,7 +23,7 @@
       "default_branch": "development"
     },
     "command-query": {
-      "pushed_at": "2026-01-02T02:15:52Z",
+      "pushed_at": "2026-01-02T09:27:07Z",
       "default_branch": "development"
     },
     "command-smoke": {
@@ -31,43 +31,43 @@
       "default_branch": "main"
     },
     "command-start-stop": {
-      "pushed_at": "2026-01-02T02:15:54Z",
+      "pushed_at": "2026-01-02T17:02:33Z",
       "default_branch": "development"
     },
     "command-wallet": {
-      "pushed_at": "2026-01-02T02:15:58Z",
+      "pushed_at": "2026-01-02T09:41:02Z",
       "default_branch": "development"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-01-02T02:15:56Z",
+      "pushed_at": "2026-01-02T06:22:56Z",
       "default_branch": "development"
     },
     "daemon-merging": {
-      "pushed_at": "2026-01-02T02:16:00Z",
+      "pushed_at": "2026-01-02T06:22:57Z",
       "default_branch": "development"
     },
     "daemon-planner": {
-      "pushed_at": "2026-01-02T02:16:16Z",
+      "pushed_at": "2026-01-02T06:24:22Z",
       "default_branch": "development"
     },
     "daemon-pricing": {
-      "pushed_at": "2026-01-02T02:15:50Z",
+      "pushed_at": "2026-01-02T06:24:20Z",
       "default_branch": "development"
     },
     "daemon-spec-rewriter": {
-      "pushed_at": "2026-01-02T02:16:10Z",
+      "pushed_at": "2026-01-02T06:24:34Z",
       "default_branch": "development"
     },
     "daemon-xp": {
-      "pushed_at": "2026-01-02T02:16:14Z",
+      "pushed_at": "2026-01-02T06:23:02Z",
       "default_branch": "development"
     },
     "text-conversation-rewards": {
-      "pushed_at": "2026-01-02T02:15:48Z",
+      "pushed_at": "2026-01-02T06:25:42Z",
       "default_branch": "development"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2026-01-02T03:50:32Z",
+      "pushed_at": "2026-01-02T12:42:29Z",
       "default_branch": "development"
     }
   }

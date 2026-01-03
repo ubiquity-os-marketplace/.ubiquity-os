@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-01T04:17:32.887Z",
+  "generated_at": "2026-01-03T04:02:12.468Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 15,
   "plugins": [
@@ -482,7 +482,7 @@
       "default_branch": "development",
       "manifest": {
         "name": "Text Vector Embeddings",
-        "short_name": "ubiquity-os-marketplace/text-vector-embeddings@development",
+        "short_name": "ubiquity-os-marketplace/text-vector-embeddings@main",
         "description": "Enables the storage, updating, and deletion of issue comment embeddings.",
         "homepage_url": "https://text-vector-embeddings-dev.deno.dev",
         "listeners": [
