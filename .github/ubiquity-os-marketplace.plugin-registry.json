@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-01-03T04:02:12.468Z",
+  "generated_at": "2026-01-06T04:09:15.519Z",
   "source_org": "ubiquity-os-marketplace",
-  "count": 15,
+  "count": 16,
   "plugins": [
     {
       "owner": "ubiquity-os-marketplace",
@@ -407,6 +407,28 @@
           "maxRetryAttempts",
           "openRouterAiModel",
           "openRouterBaseUrl"
+        ]
+      }
+    },
+    {
+      "owner": "ubiquity-os-marketplace",
+      "repo": "daemon-task-matcher",
+      "default_branch": "development",
+      "manifest": {
+        "name": "ts-template",
+        "short_name": "",
+        "description": "ts-template for UbiquityOS plugins.",
+        "homepage_url": "",
+        "listeners": [],
+        "commands": {
+          "hello": {
+            "ubiquity:example": "/hello argument",
+            "description": "Hello command with an argument."
+          }
+        },
+        "config_properties": [
+          "configurableResponse",
+          "customStringsUrl"
         ]
       }
     },
