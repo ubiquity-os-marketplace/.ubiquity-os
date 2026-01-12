@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-10T04:04:02.254Z",
+  "generated_at": "2026-01-12T04:19:09.742Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 16,
   "plugins": [
@@ -340,7 +340,7 @@
       "default_branch": "development",
       "manifest": {
         "name": "Assistive pricing",
-        "short_name": "ubiquity-os-marketplace/daemon-pricing@development",
+        "short_name": "ubiquity-os-marketplace/daemon-pricing@codex/concurrent-20251222",
         "description": "Handles assistive pricing, and allows for users to modify labels.",
         "homepage_url": "https://daemon-pricing-development.deno.dev",
         "listeners": [
@@ -353,8 +353,8 @@
         ],
         "commands": {
           "time": {
-            "ubiquity:example": "/time 1 Day",
-            "description": "Sets the time label for the given task.",
+            "ubiquity:example": "/time",
+            "description": "Sets the time label for the given task. If no duration is provided, it estimates the time automatically.",
             "parameters": {
               "type": "object",
               "properties": {
@@ -404,9 +404,7 @@
         "config_properties": [
           "cooldown",
           "eventWhiteList",
-          "maxRetryAttempts",
-          "openRouterAiModel",
-          "openRouterBaseUrl"
+          "maxRetryAttempts"
         ]
       }
     },

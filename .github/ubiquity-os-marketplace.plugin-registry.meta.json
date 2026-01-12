@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-11T04:18:03.352Z",
+  "generated_at": "2026-01-12T04:19:09.743Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,7 +7,7 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-01-10T04:04:02Z",
+      "pushed_at": "2026-01-11T04:18:03Z",
       "default_branch": "main"
     },
     "command-codex": {
@@ -39,11 +39,11 @@
       "default_branch": "development"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-01-09T11:22:28Z",
+      "pushed_at": "2026-01-11T13:41:44Z",
       "default_branch": "development"
     },
     "daemon-merging": {
-      "pushed_at": "2026-01-09T03:56:00Z",
+      "pushed_at": "2026-01-11T13:13:11Z",
       "default_branch": "development"
     },
     "daemon-planner": {
@@ -51,11 +51,11 @@
       "default_branch": "development"
     },
     "daemon-pricing": {
-      "pushed_at": "2026-01-09T05:24:49Z",
+      "pushed_at": "2026-01-11T17:04:59Z",
       "default_branch": "development"
     },
     "daemon-spec-rewriter": {
-      "pushed_at": "2026-01-02T06:24:34Z",
+      "pushed_at": "2026-01-11T13:10:11Z",
       "default_branch": "development"
     },
     "daemon-task-matcher": {
