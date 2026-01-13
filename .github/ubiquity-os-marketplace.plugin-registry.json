@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-12T04:19:09.742Z",
+  "generated_at": "2026-01-13T04:10:04.113Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 16,
   "plugins": [
@@ -49,7 +49,7 @@
         "name": "command-config",
         "short_name": "ubiquity-os-marketplace/command-config@development",
         "description": "Edits UbiquityOS configuration files based on natural language queries.",
-        "homepage_url": "https://command-config-development.deno.dev",
+        "homepage_url": "https://command-config-codex-fix.deno.dev",
         "listeners": [],
         "commands": {
           "config": {
@@ -64,6 +64,7 @@
           }
         },
         "config_properties": [
+          "autoMerge",
           "baseUrl",
           "configPath",
           "defaultTargets",

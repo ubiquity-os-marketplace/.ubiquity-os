@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-12T04:19:09.743Z",
+  "generated_at": "2026-01-13T04:10:04.113Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,7 +7,7 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-01-11T04:18:03Z",
+      "pushed_at": "2026-01-12T04:19:10Z",
       "default_branch": "main"
     },
     "command-codex": {
@@ -15,7 +15,7 @@
       "default_branch": "development"
     },
     "command-config": {
-      "pushed_at": "2026-01-09T18:45:36Z",
+      "pushed_at": "2026-01-12T09:56:36Z",
       "default_branch": "development"
     },
     "command-ping": {
@@ -59,7 +59,7 @@
       "default_branch": "development"
     },
     "daemon-task-matcher": {
-      "pushed_at": "2026-01-06T17:00:28Z",
+      "pushed_at": "2026-01-12T06:23:11Z",
       "default_branch": "development"
     },
     "daemon-xp": {
