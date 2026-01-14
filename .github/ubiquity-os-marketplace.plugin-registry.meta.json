@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-13T04:10:04.113Z",
+  "generated_at": "2026-01-14T04:16:59.694Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,7 +7,7 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-01-12T04:19:10Z",
+      "pushed_at": "2026-01-13T04:10:04Z",
       "default_branch": "main"
     },
     "command-codex": {
@@ -71,7 +71,7 @@
       "default_branch": "development"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2026-01-09T05:25:58Z",
+      "pushed_at": "2026-01-13T07:06:16Z",
       "default_branch": "development"
     }
   }
