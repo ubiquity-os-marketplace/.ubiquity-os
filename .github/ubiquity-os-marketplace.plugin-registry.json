@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-13T04:10:04.113Z",
+  "generated_at": "2026-01-15T04:11:54.705Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 16,
   "plugins": [
@@ -503,45 +503,34 @@
       "default_branch": "development",
       "manifest": {
         "name": "Text Vector Embeddings",
-        "short_name": "ubiquity-os-marketplace/text-vector-embeddings@main",
+        "short_name": "ubiquity-os-marketplace/text-vector-embeddings@fix/cron",
         "description": "Enables the storage, updating, and deletion of issue comment embeddings.",
         "homepage_url": "https://text-vector-embeddings-dev.deno.dev",
         "listeners": [
           "issue_comment.created",
           "issue_comment.edited",
           "issue_comment.deleted",
+          "pull_request_review_comment.created",
+          "pull_request_review_comment.edited",
+          "pull_request_review_comment.deleted",
+          "pull_request_review.submitted",
+          "pull_request_review.edited",
+          "pull_request.opened",
+          "pull_request.edited",
           "issues.opened",
           "issues.edited",
           "issues.deleted",
           "issues.labeled",
           "issues.closed"
         ],
-        "commands": {
-          "recommendation": {
-            "ubiquity:example": "/recommendation @alice @bob",
-            "description": "Returns recommended contributors for the current issue, optionally filtered to a list of GitHub usernames.",
-            "parameters": {
-              "type": "object",
-              "properties": {
-                "users": {
-                  "description": "Optional list of GitHub usernames to filter recommendations to.",
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
+        "commands": {},
         "config_properties": [
           "alwaysRecommend",
           "annotateThreshold",
           "dedupeMatchThreshold",
           "dedupeWarningThreshold",
           "demoFlag",
-          "jobMatchingThreshold",
-          "llm"
+          "jobMatchingThreshold"
         ]
       }
     }
