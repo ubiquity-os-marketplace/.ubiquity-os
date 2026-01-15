@@ -266,4 +266,3 @@ plugins:
       dryRun: true
       assignedTaskLimit: 2
 
-  ubiquity-os/command-demo@fix/demo:
