@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-16T04:10:05.552Z",
+  "generated_at": "2026-01-17T04:03:15.392Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,7 +7,7 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-01-15T21:00:50Z",
+      "pushed_at": "2026-01-16T04:10:06Z",
       "default_branch": "main"
     },
     "command-codex": {
@@ -51,7 +51,7 @@
       "default_branch": "development"
     },
     "daemon-pricing": {
-      "pushed_at": "2026-01-15T21:00:35Z",
+      "pushed_at": "2026-01-16T05:40:02Z",
       "default_branch": "development"
     },
     "daemon-spec-rewriter": {
