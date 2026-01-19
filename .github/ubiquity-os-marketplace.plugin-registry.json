@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-15T04:11:54.705Z",
+  "generated_at": "2026-01-19T04:20:13.380Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 16,
   "plugins": [
@@ -179,7 +179,7 @@
       "default_branch": "development",
       "manifest": {
         "name": "Start | Stop",
-        "short_name": "ubiquity-os-marketplace/command-start-stop@codex/concurrent-20251222",
+        "short_name": "ubiquity-os-marketplace/command-start-stop@development",
         "description": "Assign or un-assign yourself from an issue/task.",
         "homepage_url": "https://command-start-stop-develop.deno.dev",
         "listeners": [
