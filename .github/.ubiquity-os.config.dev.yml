@@ -70,12 +70,12 @@ tcrHtmlConfig: &tcrHtmlConfig
     score: 0.1
     countWords: true
 plugins:
-  ubiquity-os-marketplace/command-ask@development:
-    with:
-      model: google/gemini-2.5-flash
-      openRouterBaseUrl: https://openrouter.ai/api/v1
-      similarityThreshold: 0.9
-      maxDepth: 3
+  # ubiquity-os-marketplace/command-ask@development:
+  #   with:
+  #     model: google/gemini-2.5-flash
+  #     openRouterBaseUrl: https://openrouter.ai/api/v1
+  #     similarityThreshold: 0.9
+  #     maxDepth: 3
   ubiquity-os-marketplace/command-config@development:
     with:
       model: google/gemini-2.5-flash
