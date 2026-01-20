@@ -192,16 +192,19 @@ plugins:
           enabled: true
           openAi:
             endpoint: https://openrouter.ai/api/v1
-            model: google/gemini-2.5-flash
+            model:
+              name: google/gemini-2.5-flash
           multipliers:
             - role:
                 - ISSUE_SPECIFICATION
               relevance: 1
         externalContent:
           llmImageModel:
-            model: openai/gpt-4o
+            model:
+              name: openai/gpt-4o
           llmWebsiteModel:
-            model: google/gemini-2.5-flash
+            model:
+              name: google/gemini-2.5-flash
         userExtractor:
           redeemTask: true
         dataPurge:
