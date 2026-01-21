@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-20T04:15:01.364Z",
+  "generated_at": "2026-01-21T04:14:43.856Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -253,7 +253,7 @@
       "default_branch": "development",
       "manifest": {
         "name": "Assistive pricing",
-        "short_name": "ubiquity-os-marketplace/daemon-pricing@codex/concurrent-20251222",
+        "short_name": "ubiquity-os-marketplace/daemon-pricing@fix/empty-content",
         "description": "Handles assistive pricing, and allows for users to modify labels.",
         "homepage_url": "https://daemon-pricing-development.deno.dev",
         "listeners": [
