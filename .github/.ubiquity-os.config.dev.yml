@@ -80,7 +80,7 @@ plugins:
     with:
       model: gpt-5.2-codex
       reasoningEffort: medium
-      
+
   ubiquity-os-marketplace/command-query@development:
     with:
       allowPublicQuery: true
@@ -192,6 +192,10 @@ plugins:
         collaboratorOnlyPaymentInvocation: true
         contentEvaluator:
           enabled: true
+          openAi:
+            endpoint: https://openrouter.ai/api/v1
+            model:
+              name: openai/gpt-4o
           # openAi:
           #   endpoint: https://openrouter.ai/api/v1
           #   model:
@@ -201,12 +205,12 @@ plugins:
                 - ISSUE_SPECIFICATION
               relevance: 1
         # externalContent:
-          # llmImageModel:
-            # model:
-              # name: openai/gpt-4o
-          # llmWebsiteModel:
-            # model:
-              # name: google/gemini-2.5-flash
+        # llmImageModel:
+        # model:
+        # name: openai/gpt-4o
+        # llmWebsiteModel:
+        # model:
+        # name: google/gemini-2.5-flash
         userExtractor:
           redeemTask: true
         dataPurge:
