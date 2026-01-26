@@ -79,7 +79,7 @@ plugins:
   ubiquity-os-marketplace/command-config@development:
     with:
       model: gpt-5.2-codex
-      reasoningEffort: medium
+      reasoningEffort: xhigh
       
   ubiquity-os-marketplace/command-query@development:
     with:
