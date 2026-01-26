@@ -178,7 +178,7 @@ plugins:
   #     tokenLimit:
   #       context: 200000
   #       completion: 4096
-  ubiquity-os-marketplace/personal-agent-bridge@development:
+  # ubiquity-os-marketplace/personal-agent-bridge@development:
   ubiquity-os-marketplace/text-conversation-rewards@development:
     with:
       rewards:
@@ -190,21 +190,21 @@ plugins:
         collaboratorOnlyPaymentInvocation: true
         contentEvaluator:
           enabled: true
-          openAi:
-            endpoint: https://openrouter.ai/api/v1
-            model:
-              name: google/gemini-2.5-flash
+          # openAi:
+          #   endpoint: https://openrouter.ai/api/v1
+          #   model:
+          #     name: google/gemini-2.5-flash
           multipliers:
             - role:
                 - ISSUE_SPECIFICATION
               relevance: 1
-        externalContent:
-          llmImageModel:
-            model:
-              name: openai/gpt-4o
-          llmWebsiteModel:
-            model:
-              name: google/gemini-2.5-flash
+        # externalContent:
+          # llmImageModel:
+            # model:
+              # name: openai/gpt-4o
+          # llmWebsiteModel:
+            # model:
+              # name: google/gemini-2.5-flash
         userExtractor:
           redeemTask: true
         dataPurge:
