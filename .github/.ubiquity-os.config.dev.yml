@@ -79,6 +79,8 @@ plugins:
   ubiquity-os-marketplace/command-config@development:
     with:
       model: gpt-5.2-codex
+      reasoningEffort: medium
+      
   ubiquity-os-marketplace/command-query@development:
     with:
       allowPublicQuery: true
