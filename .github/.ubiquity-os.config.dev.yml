@@ -77,8 +77,8 @@ plugins:
   #     similarityThreshold: 0.9
   #     maxDepth: 3
   ubiquity-os-marketplace/command-config@development:
-    with:
-      model: google/gemini-2.5-flash
+    # with:
+      # model: google/gemini-2.5-flash
   ubiquity-os-marketplace/command-query@development:
     with:
       allowPublicQuery: true
