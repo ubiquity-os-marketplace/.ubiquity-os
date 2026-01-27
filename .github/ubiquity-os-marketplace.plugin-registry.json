@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-21T04:14:43.856Z",
+  "generated_at": "2026-01-27T04:16:03.749Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -32,7 +32,8 @@
           "defaultTargets",
           "devConfigPath",
           "model",
-          "parserPath"
+          "parserPath",
+          "reasoningEffort"
         ]
       }
     },
@@ -326,20 +327,22 @@
       "repo": "daemon-task-matcher",
       "default_branch": "development",
       "manifest": {
-        "name": "ts-template",
-        "short_name": "",
-        "description": "ts-template for UbiquityOS plugins.",
+        "name": "daemon-task-matcher",
+        "short_name": "ubiquity-os-marketplace/daemon-task-matcher@development",
+        "description": "Suggests priced issues that likely match a newly opened PR.",
         "homepage_url": "",
-        "listeners": [],
-        "commands": {
-          "hello": {
-            "ubiquity:example": "/hello argument",
-            "description": "Hello command with an argument."
-          }
-        },
+        "listeners": [
+          "pull_request.opened",
+          "pull_request.reopened",
+          "issue_comment.edited"
+        ],
+        "commands": {},
         "config_properties": [
-          "configurableResponse",
-          "customStringsUrl"
+          "confidenceThreshold",
+          "maxIssuesPerLlmCall",
+          "maxSuggestions",
+          "openRouter",
+          "requirePriceLabel"
         ]
       }
     },
