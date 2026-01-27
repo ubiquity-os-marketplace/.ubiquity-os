@@ -271,4 +271,4 @@ plugins:
       dryRun: true
       assignedTaskLimit: 2
 
-  ubiquity-os-marketplace/daemon-task-matcher@feat/matcher:
+  ubiquity-os-marketplace/daemon-task-matcher@development:
