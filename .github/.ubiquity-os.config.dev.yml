@@ -78,9 +78,9 @@ plugins:
   #     maxDepth: 3
   ubiquity-os-marketplace/command-config@development:
     with:
-      model: gpt-5.2-codex
-      reasoningEffort: xhigh
-      
+      model: openai/gpt-5
+      reasoningEffort: medium
+
   ubiquity-os-marketplace/command-query@development:
     with:
       allowPublicQuery: true
@@ -201,12 +201,12 @@ plugins:
                 - ISSUE_SPECIFICATION
               relevance: 1
         # externalContent:
-          # llmImageModel:
-            # model:
-              # name: openai/gpt-4o
-          # llmWebsiteModel:
-            # model:
-              # name: google/gemini-2.5-flash
+        # llmImageModel:
+        # model:
+        # name: openai/gpt-4o
+        # llmWebsiteModel:
+        # model:
+        # name: google/gemini-2.5-flash
         userExtractor:
           redeemTask: true
         dataPurge:
