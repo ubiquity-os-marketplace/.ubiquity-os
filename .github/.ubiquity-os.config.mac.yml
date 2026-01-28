@@ -1,5 +1,274 @@
-imports:
-  - "ubiquity-os-marketplace/.ubiquity-os@dev"
-
+zeroTrue: &zeroTrue
+  score: 0
+  countWords: true
+zeroFalse: &zeroFalse
+  score: 0
+  countWords: false
+oneTrue: &oneTrue
+  score: 1
+  countWords: true
+oneFalse: &oneFalse
+  score: 1
+  countWords: false
+allRoles: &allRoles
+  - collaborator
+  - contributor
+collaboratorOnly: &collaboratorOnly
+  - collaborator
+teamMembersOnly: &teamMembersOnly
+  - COLLABORATOR
+  - OWNER
+  - MEMBER
+  - ADMIN
+timeLabels: &timeLabels
+  - name: "Time: <15 Minutes"
+    collaboratorOnly: false
+  - name: "Time: <1 Hour"
+    collaboratorOnly: false
+  - name: "Time: <2 Hours"
+    collaboratorOnly: false
+  - name: "Time: <4 Hours"
+    collaboratorOnly: false
+  - name: "Time: <1 Day"
+    collaboratorOnly: false
+  - name: "Time: <1 Week"
+    collaboratorOnly: false
+priorityLabels: &priorityLabels
+  - name: "Priority: 0 (Regression)"
+    collaboratorOnly: false
+  - name: "Priority: 1 (Normal)"
+    collaboratorOnly: false
+  - name: "Priority: 2 (Medium)"
+    collaboratorOnly: false
+  - name: "Priority: 3 (High)"
+    collaboratorOnly: false
+  - name: "Priority: 4 (Urgent)"
+    collaboratorOnly: false
+  - name: "Priority: 5 (Emergency)"
+    collaboratorOnly: false
+tcrHtmlConfig: &tcrHtmlConfig
+  a: *oneTrue
+  code: *oneFalse
+  img: *oneFalse
+  h1: *oneTrue
+  h2: *oneTrue
+  h3: *oneTrue
+  h4: *oneTrue
+  h5: *oneTrue
+  h6: *oneTrue
+  br: *zeroTrue
+  p: *zeroTrue
+  em: *zeroTrue
+  ul: *zeroTrue
+  td: *zeroTrue
+  hr: *zeroTrue
+  ol: *zeroTrue
+  pre: *zeroFalse
+  strong: *zeroFalse
+  blockquote: *zeroFalse
+  li:
+    score: 0.1
+    countWords: true
 plugins:
-  ubiquity-os-marketplace/command-config@fix/preserve-imports:
+  # ubiquity-os-marketplace/command-ask@development:
+  #   with:
+  #     model: google/gemini-2.5-flash
+  #     openRouterBaseUrl: https://openrouter.ai/api/v1
+  #     similarityThreshold: 0.9
+  #     maxDepth: 3
+  ubiquity-os-marketplace/command-config@development:
+    with:
+      model: gpt-5.2-codex
+      reasoningEffort: high
+
+  ubiquity-os-marketplace/command-query@development:
+    with:
+      allowPublicQuery: true
+  ubiquity-os-marketplace/command-start-stop@development:
+    with:
+      reviewDelayTolerance: 3 Days
+      taskStaleTimeoutDuration: 30 Days
+      startRequiresWallet: true
+      assignedIssueScope: org
+      maxConcurrentTasks:
+        collaborator: 2
+        contributor: 2
+      emptyWalletText: Please set your wallet address with the /wallet command first
+        and try again.
+      rolesWithReviewAuthority:
+        - COLLABORATOR
+        - OWNER
+        - MEMBER
+        - ADMIN
+      requiredLabelsToStart:
+        - name: "Priority: 0 (Regression)"
+          allowedRoles: *allRoles
+        - name: "Priority: 1 (Normal)"
+          allowedRoles:
+            - collaborator
+            - contributor
+        - name: "Priority: 2 (Medium)"
+          allowedRoles:
+            - collaborator
+            - contributor
+        - name: "Priority: 3 (High)"
+          allowedRoles:
+            - collaborator
+        - name: "Priority: 4 (Urgent)"
+          allowedRoles:
+            - collaborator
+        - name: "Priority: 5 (Emergency)"
+          allowedRoles:
+            - collaborator
+      taskAccessControl:
+        usdPriceMax:
+          contributor: -1
+          collaborator: Infinity
+  ubiquity-os-marketplace/command-wallet@development:
+    with:
+      registerWalletWithVerification: false
+  ubiquity-os-marketplace/daemon-disqualifier@development:
+    with:
+      warning: 7 days
+      eventWhitelist:
+        - pull_request.review_requested
+        - pull_request.ready_for_review
+        - pull_request_review_comment.created
+        - issue_comment.created
+        - push
+      watch:
+        optOut:
+          - ubiquibot
+          - launch-party
+          - staging
+          - production
+      disqualification: 14 days
+      prioritySpeed: true
+      pullRequestRequired: true
+  ubiquity-os-marketplace/daemon-merging@development:
+    with:
+      approvalsRequired:
+        collaborator: 1
+        contributor: 2
+      mergeTimeout:
+        collaborator: 3.5 days
+        contributor: 7 days
+      repos:
+        monitor: []
+        ignore:
+          - ubiquibot
+          - launch-party
+          - staging
+          - production
+      allowedReviewerRoles:
+        - COLLABORATOR
+        - MEMBER
+        - OWNER
+  ubiquity-os-marketplace/daemon-pricing@development:
+    with:
+      labels:
+        time: *timeLabels
+        priority: *priorityLabels
+      basePriceMultiplier: 3
+      globalConfigUpdate:
+        excludeRepos: []
+      shouldFundContributorClosedIssue: false
+  # ubiquity-os-marketplace/daemon-pull-review@development:
+  #   with:
+  #     openRouterAiModel: google/gemini-2.5-flash
+  #     openRouterBaseUrl: https://openrouter.ai/api/v1
+  #     tokenLimit:
+  #       context: 200000
+  #       completion: 4096
+  # ubiquity-os-marketplace/personal-agent-bridge@development:
+  ubiquity-os-marketplace/text-conversation-rewards@development:
+    with:
+      rewards:
+        evmNetworkId: 100
+        evmPrivateEncrypted: giLxu7IVSTpEFO89DaeCgnkKemYf2aFlK9EUQkbt71YmFOcQdIkCT8JDpX5zV5Sg1TqBeziZ486U0E3a6nD3emg0x9oeG3ILRUTlOE4I3RBZ0yTadsnV4RvewJMCMZJaYDuom-rHzog8p9InBwaHBszFeWItttSwS7o
+      incentives:
+        requirePriceLabel: true
+        limitRewards: true
+        collaboratorOnlyPaymentInvocation: true
+        contentEvaluator:
+          enabled: true
+          # openAi:
+          #   endpoint: https://openrouter.ai/api/v1
+          #   model:
+          #     name: google/gemini-2.5-flash
+          multipliers:
+            - role:
+                - ISSUE_SPECIFICATION
+              relevance: 1
+        # externalContent:
+        # llmImageModel:
+        # model:
+        # name: openai/gpt-4o
+        # llmWebsiteModel:
+        # model:
+        # name: google/gemini-2.5-flash
+        userExtractor:
+          redeemTask: true
+        dataPurge:
+          skipCommentsWhileAssigned: "exact"
+        reviewIncentivizer: {}
+        formattingEvaluator:
+          multipliers:
+            - role:
+                - ISSUE_AUTHOR
+                - PULL_SPECIFICATION
+                - ISSUE_COLLABORATOR
+                - PULL_COLLABORATOR
+              multiplier: 2
+              rewards:
+                wordValue: 0.1
+                html: *tcrHtmlConfig
+            - role:
+                - ISSUE_SPECIFICATION
+              multiplier: 3
+              rewards:
+                wordValue: 0.1
+                html: *tcrHtmlConfig
+            - role:
+                - ISSUE_CONTRIBUTOR
+                - ISSUE_ASSIGNEE
+              multiplier: 1
+              rewards:
+                wordValue: 0.1
+                html: *tcrHtmlConfig
+            - role:
+                - PULL_AUTHOR
+                - PULL_CONTRIBUTOR
+                - PULL_ASSIGNEE
+              multiplier: 0
+              rewards:
+                wordValue: 0
+                html: *tcrHtmlConfig
+        permitGeneration: {}
+        simplificationIncentivizer: {}
+        payment:
+          automaticTransferMode: false
+        githubComment:
+          post: true
+          debug: false
+      dataCollection:
+        maxAttempts: 10
+        delayMs: 1000
+  ubiquity-os-marketplace/text-vector-embeddings@development:
+    with:
+      dedupeMatchThreshold: 0.95
+      dedupeWarningThreshold: 0.8
+      matchThreshold: 0.95
+      warningThreshold: 0.8
+      jobMatchingThreshold: 0.8
+      alwaysRecommend: 0
+  ubiquity-os-marketplace/daemon-spec-rewriter@development:
+
+  ubiquity-os-marketplace/daemon-xp@development:
+
+  ubiquity-os-marketplace/daemon-planner@development:
+    with:
+      dryRun: true
+      assignedTaskLimit: 2
+
+  ubiquity-os-marketplace/daemon-task-matcher@feat/matcher:
