@@ -1,5 +1,4 @@
-imports:
-  - "ubiquity-os-marketplace/.ubiquity-os@dev"
+imports: []
 
 plugins:
   ubiquity-os-marketplace/command-config@fix/preserve-imports:
