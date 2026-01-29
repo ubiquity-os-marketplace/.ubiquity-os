@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-27T04:16:03.749Z",
+  "generated_at": "2026-01-29T04:48:31.773Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -11,7 +11,7 @@
         "name": "command-config",
         "short_name": "ubiquity-os-marketplace/command-config@development",
         "description": "Edits UbiquityOS configuration files based on natural language queries.",
-        "homepage_url": "https://command-config-development.deno.dev",
+        "homepage_url": "https://command-config-chore-updat.deno.dev",
         "listeners": [],
         "commands": {
           "config": {
@@ -254,7 +254,7 @@
       "default_branch": "development",
       "manifest": {
         "name": "Assistive pricing",
-        "short_name": "ubiquity-os-marketplace/daemon-pricing@fix/empty-content",
+        "short_name": "ubiquity-os-marketplace/daemon-pricing@fix/double-estimate",
         "description": "Handles assistive pricing, and allows for users to modify labels.",
         "homepage_url": "https://daemon-pricing-development.deno.dev",
         "listeners": [
@@ -284,6 +284,7 @@
           "basePriceMultiplier",
           "globalConfigUpdate",
           "labels",
+          "llmModel",
           "shouldFundContributorClosedIssue"
         ]
       }
