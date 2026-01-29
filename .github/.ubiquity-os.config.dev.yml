@@ -164,7 +164,7 @@ plugins:
         - COLLABORATOR
         - MEMBER
         - OWNER
-  ubiquity-os-marketplace/daemon-pricing@fix/double-estimate:
+  ubiquity-os-marketplace/daemon-pricing@development:
     with:
       labels:
         time: *timeLabels
