@@ -2,4 +2,4 @@ imports:
   - "ubiquity-os-marketplace/.ubiquity-os@dev"
 
 plugins:
-  ubiquity-os-marketplace/command-config@fix/preserve-imports:
+  ubiquity-os-marketplace/command-config@development:
