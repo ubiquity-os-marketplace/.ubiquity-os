@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-29T04:48:31.773Z",
+  "generated_at": "2026-02-01T05:08:53.441Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -9,9 +9,9 @@
       "default_branch": "development",
       "manifest": {
         "name": "command-config",
-        "short_name": "ubiquity-os-marketplace/command-config@development",
+        "short_name": "ubiquity-os-marketplace/command-config@fix/preserve-imports",
         "description": "Edits UbiquityOS configuration files based on natural language queries.",
-        "homepage_url": "https://command-config-chore-updat.deno.dev",
+        "homepage_url": "https://command-config-development.deno.dev",
         "listeners": [],
         "commands": {
           "config": {
@@ -27,12 +27,9 @@
         },
         "config_properties": [
           "autoMerge",
-          "baseUrl",
-          "configPath",
           "defaultTargets",
-          "devConfigPath",
+          "environment",
           "model",
-          "parserPath",
           "reasoningEffort"
         ]
       }

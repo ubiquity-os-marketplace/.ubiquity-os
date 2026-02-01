@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-01-31T04:43:33.112Z",
+  "generated_at": "2026-02-01T05:08:53.442Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,11 +7,11 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-01-30T04:50:48Z",
+      "pushed_at": "2026-01-31T05:25:35Z",
       "default_branch": "main"
     },
     "command-config": {
-      "pushed_at": "2026-01-29T08:40:40Z",
+      "pushed_at": "2026-01-31T05:56:38Z",
       "default_branch": "development"
     },
     "command-query": {
