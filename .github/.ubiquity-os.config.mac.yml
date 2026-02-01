@@ -3,3 +3,6 @@ imports:
 
 plugins:
   ubiquity-os-marketplace/command-config@development:
+  0x4007-ubiquity-os/daemon-hotfix:
+    runsOn:
+      - kernel.plugin_error
