@@ -181,7 +181,7 @@ plugins:
   #       context: 200000
   #       completion: 4096
   # ubiquity-os-marketplace/personal-agent-bridge@development:
-  ubiquity-os-marketplace/text-conversation-rewards@development:
+  ubiquity-os-marketplace/text-conversation-rewards@fix/esm:
     with:
       rewards:
         evmNetworkId: 100
