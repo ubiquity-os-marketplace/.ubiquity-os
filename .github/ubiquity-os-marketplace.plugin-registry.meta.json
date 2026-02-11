@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-10T05:13:23.787Z",
+  "generated_at": "2026-02-11T05:12:24.154Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -7,59 +7,59 @@
       "default_branch": "main"
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-02-09T05:12:25Z",
+      "pushed_at": "2026-02-10T05:13:24Z",
       "default_branch": "main"
     },
     "command-config": {
-      "pushed_at": "2026-01-31T05:56:38Z",
+      "pushed_at": "2026-02-10T15:19:47Z",
       "default_branch": "development"
     },
     "command-query": {
-      "pushed_at": "2026-01-29T07:32:19Z",
+      "pushed_at": "2026-02-10T15:19:56Z",
       "default_branch": "development"
     },
     "command-start-stop": {
-      "pushed_at": "2026-02-10T00:19:44Z",
+      "pushed_at": "2026-02-11T05:12:01Z",
       "default_branch": "development"
     },
     "command-wallet": {
-      "pushed_at": "2026-01-29T07:32:25Z",
+      "pushed_at": "2026-02-10T15:20:10Z",
       "default_branch": "development"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-02-09T07:44:23Z",
+      "pushed_at": "2026-02-10T15:22:51Z",
       "default_branch": "development"
     },
     "daemon-merging": {
-      "pushed_at": "2026-02-04T18:25:46Z",
+      "pushed_at": "2026-02-10T15:19:39Z",
       "default_branch": "development"
     },
     "daemon-planner": {
-      "pushed_at": "2026-01-29T07:32:43Z",
+      "pushed_at": "2026-02-10T15:20:25Z",
       "default_branch": "development"
     },
     "daemon-pricing": {
-      "pushed_at": "2026-02-02T06:42:40Z",
+      "pushed_at": "2026-02-10T15:19:30Z",
       "default_branch": "development"
     },
     "daemon-spec-rewriter": {
-      "pushed_at": "2026-02-04T18:28:39Z",
+      "pushed_at": "2026-02-10T15:20:43Z",
       "default_branch": "development"
     },
     "daemon-task-matcher": {
-      "pushed_at": "2026-02-07T05:33:03Z",
+      "pushed_at": "2026-02-10T15:20:50Z",
       "default_branch": "development"
     },
     "daemon-xp": {
-      "pushed_at": "2026-02-04T04:31:52Z",
+      "pushed_at": "2026-02-10T15:21:03Z",
       "default_branch": "development"
     },
     "text-conversation-rewards": {
-      "pushed_at": "2026-02-05T08:45:56Z",
+      "pushed_at": "2026-02-10T15:27:16Z",
       "default_branch": "development"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2026-02-05T15:39:21Z",
+      "pushed_at": "2026-02-10T15:27:21Z",
       "default_branch": "development"
     }
   }
