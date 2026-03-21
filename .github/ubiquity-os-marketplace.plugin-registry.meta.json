@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T04:57:15.817Z",
+  "generated_at": "2026-03-21T04:46:45.395Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-03-19T05:02:43Z",
+      "pushed_at": "2026-03-20T04:57:17Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
@@ -80,14 +80,14 @@
       "manifest_source": "artifact"
     },
     "daemon-task-matcher": {
-      "pushed_at": "2026-03-17T08:37:58Z",
+      "pushed_at": "2026-03-20T08:10:32Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-xp": {
-      "pushed_at": "2026-03-17T07:11:42Z",
+      "pushed_at": "2026-03-20T11:42:23Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
