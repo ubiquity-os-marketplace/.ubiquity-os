@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T05:03:44.370Z",
+  "generated_at": "2026-03-26T05:16:34.541Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-03-24T05:03:29Z",
+      "pushed_at": "2026-03-25T05:03:45Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
@@ -24,28 +24,28 @@
       "manifest_source": "artifact"
     },
     "command-query": {
-      "pushed_at": "2026-03-24T07:23:25Z",
+      "pushed_at": "2026-03-25T05:21:05Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "command-start-stop": {
-      "pushed_at": "2026-03-24T07:23:29Z",
+      "pushed_at": "2026-03-25T05:21:08Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "command-wallet": {
-      "pushed_at": "2026-03-24T07:23:15Z",
+      "pushed_at": "2026-03-25T05:24:45Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-03-24T07:22:21Z",
+      "pushed_at": "2026-03-25T05:19:17Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
@@ -94,14 +94,14 @@
       "manifest_source": "artifact"
     },
     "text-conversation-rewards": {
-      "pushed_at": "2026-03-24T07:22:47Z",
+      "pushed_at": "2026-03-25T05:19:15Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2026-03-24T07:23:44Z",
+      "pushed_at": "2026-03-25T05:25:16Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
