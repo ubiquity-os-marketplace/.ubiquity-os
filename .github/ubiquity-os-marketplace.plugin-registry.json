@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-31T05:19:05.115Z",
+  "generated_at": "2026-04-01T05:31:17.711Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -141,7 +141,7 @@
         "name": "command-wallet",
         "short_name": "ubiquity-os-marketplace/command-wallet@development",
         "description": "Allows users to register their wallets to collect rewards.",
-        "homepage_url": "https://command-wallet-development.deno.dev",
+        "homepage_url": "https://command-wallet--development.ubiquity-os.deno.net",
         "listeners": [],
         "commands": {
           "wallet": {
