@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-01T05:31:17.711Z",
+  "generated_at": "2026-04-06T05:33:21.840Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -91,7 +91,7 @@
         "name": "@ubiquity-os/command-start-stop",
         "short_name": "ubiquity-os-marketplace/command-start-stop@development",
         "description": "Enables the assignment and graceful unassignment of tasks to contributors.",
-        "homepage_url": "https://command-start-stop--development.ubiquity-os.deno.net",
+        "homepage_url": "",
         "listeners": [
           "pull_request.opened",
           "pull_request.edited",
