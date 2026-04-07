@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-06T05:33:21.840Z",
+  "generated_at": "2026-04-07T05:19:30.174Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,98 +10,98 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-04-05T05:20:56Z",
+      "pushed_at": "2026-04-06T05:33:23Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
       "manifest_source": null
     },
     "command-config": {
-      "pushed_at": "2026-03-31T08:58:30Z",
+      "pushed_at": "2026-04-06T14:07:09Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "command-query": {
-      "pushed_at": "2026-03-31T05:36:11Z",
+      "pushed_at": "2026-04-07T04:18:22Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "command-start-stop": {
-      "pushed_at": "2026-04-06T05:18:44Z",
+      "pushed_at": "2026-04-06T14:43:52Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "command-wallet": {
-      "pushed_at": "2026-04-01T06:45:30Z",
+      "pushed_at": "2026-04-07T04:39:01Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-03-31T05:37:32Z",
+      "pushed_at": "2026-04-07T04:43:35Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-merging": {
-      "pushed_at": "2026-03-31T05:37:04Z",
+      "pushed_at": "2026-04-07T04:51:17Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-planner": {
-      "pushed_at": "2026-03-31T05:35:41Z",
+      "pushed_at": "2026-04-07T05:00:07Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-pricing": {
-      "pushed_at": "2026-03-31T05:37:35Z",
+      "pushed_at": "2026-04-06T15:54:11Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-spec-rewriter": {
-      "pushed_at": "2026-03-31T05:37:07Z",
+      "pushed_at": "2026-04-06T14:07:32Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-task-matcher": {
-      "pushed_at": "2026-03-31T05:36:41Z",
+      "pushed_at": "2026-04-06T14:08:13Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-xp": {
-      "pushed_at": "2026-04-01T06:33:11Z",
+      "pushed_at": "2026-04-06T16:15:39Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "text-conversation-rewards": {
-      "pushed_at": "2026-03-31T05:37:57Z",
+      "pushed_at": "2026-04-06T14:08:40Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2026-03-31T05:38:01Z",
+      "pushed_at": "2026-04-07T04:11:27Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
