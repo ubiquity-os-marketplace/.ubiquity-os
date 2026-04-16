@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-15T05:32:08.462Z",
+  "generated_at": "2026-04-16T05:37:47.590Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-04-14T05:32:05Z",
+      "pushed_at": "2026-04-15T11:15:34Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
@@ -45,14 +45,14 @@
       "manifest_source": "artifact"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-04-13T15:48:14Z",
+      "pushed_at": "2026-04-15T23:45:25Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-merging": {
-      "pushed_at": "2026-04-14T13:22:20Z",
+      "pushed_at": "2026-04-15T11:42:08Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
@@ -66,7 +66,7 @@
       "manifest_source": "artifact"
     },
     "daemon-pricing": {
-      "pushed_at": "2026-04-13T15:45:20Z",
+      "pushed_at": "2026-04-15T09:49:40Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",

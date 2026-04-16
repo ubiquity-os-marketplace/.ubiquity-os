@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T05:32:02.794Z",
+  "generated_at": "2026-04-16T05:37:47.590Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -264,13 +264,14 @@
         "name": "@ubiquity-os/daemon-pricing",
         "short_name": "ubiquity-os-marketplace/daemon-pricing@development",
         "description": "Helps set pricing for GitHub Issues and their rewards.",
-        "homepage_url": "",
+        "homepage_url": "https://daemon-pricing-development.ubiquity-os.deno.net",
         "listeners": [
           "repository.created",
           "issues.labeled",
           "issues.unlabeled",
           "issues.opened",
           "label.edited",
+          "issue_comment.created",
           "push"
         ],
         "commands": {
