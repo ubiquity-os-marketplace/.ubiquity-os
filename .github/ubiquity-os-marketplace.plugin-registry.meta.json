@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T05:37:47.590Z",
+  "generated_at": "2026-04-17T05:35:41.677Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-04-15T11:15:34Z",
+      "pushed_at": "2026-04-16T05:37:49Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
@@ -31,7 +31,7 @@
       "manifest_source": "artifact"
     },
     "command-start-stop": {
-      "pushed_at": "2026-04-13T08:16:03Z",
+      "pushed_at": "2026-04-17T04:06:33Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
@@ -45,14 +45,14 @@
       "manifest_source": "artifact"
     },
     "daemon-disqualifier": {
-      "pushed_at": "2026-04-15T23:45:25Z",
+      "pushed_at": "2026-04-16T09:39:04Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
       "manifest_source": "artifact"
     },
     "daemon-merging": {
-      "pushed_at": "2026-04-15T11:42:08Z",
+      "pushed_at": "2026-04-16T12:28:07Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
@@ -101,7 +101,7 @@
       "manifest_source": "artifact"
     },
     "text-vector-embeddings": {
-      "pushed_at": "2026-04-13T15:45:30Z",
+      "pushed_at": "2026-04-16T12:40:40Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",

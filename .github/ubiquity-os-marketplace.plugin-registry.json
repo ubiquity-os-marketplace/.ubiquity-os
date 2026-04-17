@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-16T05:37:47.590Z",
+  "generated_at": "2026-04-17T05:35:41.677Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -432,7 +432,7 @@
         "name": "@ubiquity-os/text-vector-embeddings",
         "short_name": "ubiquity-os-marketplace/text-vector-embeddings@development",
         "description": "Generates vector embeddings of GitHub comments and stores them in Supabase.",
-        "homepage_url": "",
+        "homepage_url": "https://text-vector-embeddings-developme.ubiquity-os.deno.net",
         "listeners": [
           "issue_comment.created",
           "issue_comment.deleted",
