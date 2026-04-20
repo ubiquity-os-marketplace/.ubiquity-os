@@ -143,7 +143,7 @@ plugins:
       disqualification: 14 days
       prioritySpeed: true
       pullRequestRequired: true
-  ubiquity-os-marketplace/daemon-merging@feat/postgres-issue-store:
+  ubiquity-os-marketplace/daemon-merging@development:
     with:
       approvalsRequired:
         collaborator: 1
