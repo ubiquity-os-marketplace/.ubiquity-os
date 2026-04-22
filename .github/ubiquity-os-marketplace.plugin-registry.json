@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T05:35:41.677Z",
+  "generated_at": "2026-04-22T05:33:49.322Z",
   "source_org": "ubiquity-os-marketplace",
   "count": 13,
   "plugins": [
@@ -58,8 +58,10 @@
         "name": "@ubiquity-os/command-query",
         "short_name": "ubiquity-os-marketplace/command-query@development",
         "description": "Queries a user and retrieves its related information, such as the wallet, the label access control, or the current XP.",
-        "homepage_url": "",
-        "listeners": [],
+        "homepage_url": "https://command-query-development.ubiquity-os.deno.net",
+        "listeners": [
+          "issue_comment.created"
+        ],
         "commands": {
           "query": {
             "description": "Returns the user's wallet, access, and multiplier information.",
@@ -241,7 +243,7 @@
         "name": "@ubiquity-os/daemon-planner",
         "short_name": "ubiquity-os-marketplace/daemon-planner@development",
         "description": "Automates GitHub issue assignment across organizations based on contributor capacity.",
-        "homepage_url": "",
+        "homepage_url": "https://daemon-planner-development.ubiquity-os.deno.net",
         "listeners": [
           "issues.opened",
           "issues.reopened",
