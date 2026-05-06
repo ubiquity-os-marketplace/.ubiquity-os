@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-05T05:49:43.056Z",
+  "generated_at": "2026-05-06T06:11:52.474Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-05-04T06:21:25Z",
+      "pushed_at": "2026-05-05T05:49:44Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
@@ -94,7 +94,7 @@
       "manifest_source": "artifact"
     },
     "text-conversation-rewards": {
-      "pushed_at": "2026-05-05T05:17:55Z",
+      "pushed_at": "2026-05-05T20:38:33Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
