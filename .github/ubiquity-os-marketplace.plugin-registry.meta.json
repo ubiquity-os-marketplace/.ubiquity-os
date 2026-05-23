@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-22T06:56:13.383Z",
+  "generated_at": "2026-05-23T06:18:53.021Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-05-21T06:59:59Z",
+      "pushed_at": "2026-05-22T06:56:14Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
