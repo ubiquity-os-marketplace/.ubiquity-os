@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T08:07:06.179Z",
+  "generated_at": "2026-10-25T08:24:24.056Z",
   "source_org": "ubiquity-os-marketplace",
   "repo_state": {
     ".github": {
@@ -10,7 +10,7 @@
       "manifest_source": null
     },
     ".ubiquity-os": {
-      "pushed_at": "2026-10-23T08:32:01Z",
+      "pushed_at": "2026-10-24T08:07:08Z",
       "default_branch": "main",
       "artifact_ref": "dist/main",
       "manifest_ref": null,
@@ -31,7 +31,7 @@
       "manifest_source": "artifact"
     },
     "command-start-stop": {
-      "pushed_at": "2026-10-19T01:54:43Z",
+      "pushed_at": "2026-10-25T05:42:00Z",
       "default_branch": "development",
       "artifact_ref": "dist/development",
       "manifest_ref": "dist/development",
